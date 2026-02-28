@@ -1,0 +1,30 @@
+# 环境配置
+env:
+  base_url: "https://www.whhnhy.com:38868"
+  timeout: 30
+  retry_count: 3
+
+# 管理员凭据
+admin:
+  tenant_name: "芋道源码"
+  username: "admin"
+  password: "Szxc@2024"
+  remember_me: true
+
+# API 端点
+api:
+  auth:
+    login: "/admin-api/system/auth/login"
+  user:
+    update_password: "/admin-api/converge/user/update-password"
+
+# 测试配置
+test:
+  new_password: "a123456"
+  verify_ssl: false
+
+# 日志配置
+log:
+  level: "INFO"
+  format: "%(asctime)s [%(levelname)s] %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"

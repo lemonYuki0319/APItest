@@ -1,0 +1,10 @@
+# API 端点配置
+endpoints:
+  auth:
+    login: "/admin-api/system/auth/login"
+  user:
+    update_password: "/admin-api/converge/user/update-password"
+  # 可以在此添加更多 API 端点
+  cultural_asset:
+    create: "/api/converge-app-api/digital/culture/asset"
+    query: "/api/converge-app-api/digital/culture/asset/page"

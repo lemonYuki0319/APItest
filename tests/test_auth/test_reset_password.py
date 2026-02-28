@@ -17,6 +17,6 @@ def test_reset_password(user_actions, user_id):
 def test_reset_password_with_custom_password(user_actions):
     """测试使用自定义密码重置"""
     user_id = DataUtils.get_user_ids()[0]  # 使用第一个用户 ID
-    custom_password = "Custom@123"
+    custom_password = "a123456"
     result = user_actions.reset_password(user_id, custom_password)
     assert result["code"] == 200, f"重置失败: {result.get('msg')}"

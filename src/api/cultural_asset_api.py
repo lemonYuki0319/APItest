@@ -49,3 +49,4 @@ class CulturalAssetAPI(BaseAPI):
         headers["Accept"] = "application/json, text/plain, */*"
         response = self.get(endpoint, headers=headers,params=params)
         return response
+        

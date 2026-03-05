@@ -13,8 +13,8 @@ class CulturalAssetAPI(BaseAPI):
         if token:
             self.token = token
     
-    def login(self, mobile, password, code=""):
-        """用户登录"""
+    def login_APP(self, mobile, password, code=""):
+        """APP端登录"""
         endpoint = "/converge-app-api/converge/auth/login"
         data = {
             "mobile": mobile,
@@ -27,13 +27,48 @@ class CulturalAssetAPI(BaseAPI):
             self.token = data_obj.get("accessToken")
         return response
     
+    def login_WEB(self, tenantName, username, password,rememberMe=True):
+        """WEB端登录"""
+        endpoint = "/admin-api/system/auth/login"
+        data = {
+            "tenantName": tenantName,
+            "username": username,
+            "password": password,
+            "rememberMe": rememberMe
+        }
+        response = self.post(endpoint, json=data)
+        if response.get("code") == 200:
+            data_obj = response.get("data", {})
+            self.token = data_obj.get("accessToken")
+        return response
+
+    def asset_Registration_Review(self,asset_data):
+        """资产登记审核"""
+        endpoint = "/admin-api/digital/culture/asset/audit"
+        headers = self.get_headers()
+        headers["Accept"] = "application/json, text/plain, */*"
+        response = self.put(endpoint, json=asset_data, headers=headers)
+        return response
+
+    def asset_Disclosure_Review(self,asset_data):
+        """资产公示审核"""
+        endpoint = "/admin-api/digital/culture/asset/update-notice-status"
+        headers = self.get_headers()
+        headers["Accept"] = "application/json, text/plain, */*"
+        response = self.put(endpoint, json=asset_data, headers=headers)
+        return response
+
+
     def create_asset(self, asset_data):
         """创建文化资产"""
         endpoint = "/api/converge-app-api/digital/culture/asset/create"
         headers = self.get_headers()
         headers["Content-Type"] = "application/json;charset=UTF-8"
         response = self.post(endpoint, json=asset_data, headers=headers)
-        return response
+        asset_id = None
+        if response.get("code") == 200:
+            asset_id = response.get("data")
+        return response, asset_id
 
     def query_asset(self,pageNo=1,pageSize=10,cultureAssetName="",cultureAssetType="2997845276013892013"):
         """查询资产管理"""

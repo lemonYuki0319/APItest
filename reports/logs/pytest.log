@@ -1,5 +1,11 @@
-2026-03-03 15:31:48 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
-2026-03-03 15:31:48 [DEBUG] https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
-2026-03-03 15:31:48 [INFO] 用户登录成功
-2026-03-03 15:31:48 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
-2026-03-03 15:31:48 [INFO] 文化资产创建成功
+2026-03-05 11:09:11 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-03-05 11:09:11 [DEBUG] https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
+2026-03-05 11:09:11 [INFO] APP端登录成功
+2026-03-05 11:09:11 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+2026-03-05 11:09:11 [INFO] 文化资产登记成功
+2026-03-05 11:09:11 [DEBUG] https://www.whhnhy.com:38868 "POST /admin-api/system/auth/login HTTP/1.1" 200 None
+2026-03-05 11:09:11 [INFO] WEB端登录成功
+2026-03-05 11:09:13 [DEBUG] https://www.whhnhy.com:38868 "PUT /admin-api/digital/culture/asset/audit HTTP/1.1" 200 None
+2026-03-05 11:09:13 [INFO] 资产登记审核成功
+2026-03-05 11:09:13 [DEBUG] https://www.whhnhy.com:38868 "PUT /admin-api/digital/culture/asset/update-notice-status HTTP/1.1" 200 None
+2026-03-05 11:09:13 [INFO] 资产公示审核成功

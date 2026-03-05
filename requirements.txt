@@ -1,5 +1,6 @@
 # 测试框架
 pytest==9.0.2
+pytest-allure-adaptor==1.7.10
 
 # HTTP 请求库
 requests==2.31.0
@@ -9,7 +10,7 @@ urllib3==2.1.0
 pyyaml==6.0.1
 
 # 数据处理
-openpyxl==3.1.5
+xlrd==2.0.1
 
 # 其他
 alure-pytest==2.13.2

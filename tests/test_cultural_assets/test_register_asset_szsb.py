@@ -11,9 +11,9 @@ def cultural_asset_actions():
     """创建文化资产业务动作实例"""
     return CulturalAssetActions()
 
-def test_register_asset(cultural_asset_actions):
-    """登记文化资产"""
-    login_response = cultural_asset_actions.login("18671450802", "a123456")
+def test_register_asset_szsb(cultural_asset_actions):
+    """登记数字商标文化资产"""
+    login_response = cultural_asset_actions.login_APP("18800000091", "a123456")
     assert login_response.get("code") == 200, "登录失败"
     
     # 准备资产数据
@@ -69,5 +69,6 @@ def test_register_asset(cultural_asset_actions):
     }
     
     # 创建资产
-    response = cultural_asset_actions.create_asset(asset_data)
-    assert response.get("code") == 200, f"创建资产失败: {response.get('msg')}"
+    response, asset_id = cultural_asset_actions.create_asset(asset_data)
+    assert response.get("code") == 200, f"登记资产失败: {response.get('msg')}"
+    print(f"资产登记成功，资产ID: {asset_id}")

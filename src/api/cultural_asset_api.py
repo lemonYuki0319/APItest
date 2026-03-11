@@ -12,7 +12,7 @@ class CulturalAssetAPI(BaseAPI):
         super().__init__()
         if token:
             self.token = token
-    
+
     def login_APP(self, mobile, password, code=""):
         """APP端登录"""
         endpoint = "/converge-app-api/converge/auth/login"
@@ -26,7 +26,7 @@ class CulturalAssetAPI(BaseAPI):
             data_obj = response.get("data", {})
             self.token = data_obj.get("accessToken")
         return response
-    
+
     def login_WEB(self, tenantName, username, password,rememberMe=True):
         """WEB端登录"""
         endpoint = "/admin-api/system/auth/login"
@@ -84,4 +84,39 @@ class CulturalAssetAPI(BaseAPI):
         headers["Accept"] = "application/json, text/plain, */*"
         response = self.get(endpoint, headers=headers,params=params)
         return response
-        
+
+    def multi_turn_dialogue(self,asset_data):
+        """多轮对话"""
+        endpoint = "/api/converge-app-api/ai/assistant/common/stream"
+        url = f"{self.base_url}{endpoint}"
+        headers = self.get_headers()
+        headers["Content-Type"] = "application/json;charset=UTF-8"
+        headers["Accept"] = "text/event-stream, text/event-stream"
+        # 直接使用session.post，不使用父类的post方法，因为需要处理SSE流式响应
+        response = self.session.post(url, json=asset_data, headers=headers, stream=True)
+        # 返回响应对象，而不是尝试解析为JSON
+        return response
+
+    def query_registered_assets(self,pageNo=1,pageSize=10):
+        """查询登记资产"""
+        endpoint = "/admin-api/digital/culture/asset/page"
+        headers = self.get_headers()
+        headers["Content-Type"] = "application/json;charset=UTF-8"
+        params = {
+            "pageNo": pageNo,
+            "pageSize": pageSize
+        }
+        headers["Accept"] = "application/json, text/plain, */*"
+        response = self.get(endpoint, headers=headers,params=params)
+        return response
+
+    def get_conversation(self,asset_data):
+        """获取对话"""
+        endpoint = "/api/converge-app-api/ai/chat/conversation/create-my"
+        headers = self.get_headers()
+        headers["Content-Type"] = "application/json;charset=UTF-8"
+        response = self.post(endpoint, json=asset_data, headers=headers)
+        conversation_id = None
+        if response.get("code") == 200:
+            conversation_id = response.get("data", {}).get("id")
+        return response, conversation_id

@@ -13,7 +13,7 @@ def cultural_asset_actions():
 
 def test_register_asset_szsb(cultural_asset_actions):
     """登记数字商标文化资产"""
-    login_response = cultural_asset_actions.login_APP("18800000091", "a123456")
+    login_response = cultural_asset_actions.login_APP("18310665081", "a123456")
     assert login_response.get("code") == 200, "登录失败"
     
     # 准备资产数据
@@ -72,3 +72,26 @@ def test_register_asset_szsb(cultural_asset_actions):
     response, asset_id = cultural_asset_actions.create_asset(asset_data)
     assert response.get("code") == 200, f"登记资产失败: {response.get('msg')}"
     print(f"资产登记成功，资产ID: {asset_id}")
+
+    #WEB端登录
+    login_response = cultural_asset_actions.login_WEB("芋道源码", "admin", "Szxc@2024")
+    assert login_response.get("code") == 200, "登录失败"
+    # 资产登记审核
+    asset_data=({
+    "id": f"{asset_id}",
+    "auditStatus": "2",
+    "auditReason": "1"
+    })
+
+    response = cultural_asset_actions.asset_Registration_Review(asset_data)
+    assert response.get("code") == 200, f"资产登记审核失败: {response.get('msg')}"
+    
+    # 资产公示审核
+    asset_data=({
+    "id": f"{asset_id}",
+    "noticeStatus": "2"
+    })
+
+    response = cultural_asset_actions.asset_Disclosure_Review(asset_data)
+    assert response.get("code") == 200, f"资产公示审核失败: {response.get('msg')}"
+    print(f"资产公示审核成功，资产ID: {asset_id}")

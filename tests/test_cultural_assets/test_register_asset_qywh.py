@@ -13,13 +13,13 @@ def cultural_asset_actions():
 
 def test_register_asset_qywh(cultural_asset_actions):
     """登记企业文化资产"""
-    login_response = cultural_asset_actions.login_APP("18800000091", "a123456")
+    login_response = cultural_asset_actions.login_APP("18310665081", "a123456")
     assert login_response.get("code") == 200, "登录失败"
-    
+
     # 准备资产数据
     asset_data = {
         "isRegistered": 1,
-        "cultureAssetName": "企业文化",
+        "cultureAssetName": "企业文化002",
         "cultureAssetType": "2997845276013894002",
         "registerSubjectType": "1",
         "ownershipType": "1",
@@ -33,13 +33,13 @@ def test_register_asset_qywh(cultural_asset_actions):
         "assetImgUrl": [
             {
                 "name": "4784c45070c1992760d2b64f7fac697.png",
-                "url": "https://www.whhnhy.com:29000/szxc/14d3e2c86b989fe7c3c5dba385a192eaa1f3a6423b71930c8df6a1c76553e789.png"
+                "url": "https://www.whhnhy.com:8900/szxc/14d3e2c86b989fe7c3c5dba385a192eaa1f3a6423b71930c8df6a1c76553e789.png"
             }
         ],
         "ownershipFileUrl": [
             {
                 "name": "01资产权属证明.docx",
-                "url": "https://www.whhnhy.com:29000/szxc/d1e248393b329c0246a6c954592b104c7ef9bbb6c1bdb561974da90f01bac190.docx"
+                "url": "https://www.whhnhy.com:8900/szxc/d1e248393b329c0246a6c954592b104c7ef9bbb6c1bdb561974da90f01bac190.docx"
             }
         ],
         "assetDetailValidJson": json.dumps({
@@ -66,7 +66,7 @@ def test_register_asset_qywh(cultural_asset_actions):
             {"label": "补充说明文件", "name": "supplementaryDocuments", "type": "uploader", "isWrap": True, "placeholder": "点击上传\n支持Word格式，单个文件不超过10MB", "maxSize": 10485760, "fileType": ["application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"], "value": [], "fileState": True}
         ], ensure_ascii=False)
     }
-    
+
     # 创建资产
     response, asset_id = cultural_asset_actions.create_asset(asset_data)
     assert response.get("code") == 200, f"登记资产失败: {response.get('msg')}"
@@ -84,7 +84,7 @@ def test_register_asset_qywh(cultural_asset_actions):
 
     response = cultural_asset_actions.asset_Registration_Review(asset_data)
     assert response.get("code") == 200, f"资产登记审核失败: {response.get('msg')}"
-    
+
     # 资产公示审核
     asset_data=({
     "id": f"{asset_id}",

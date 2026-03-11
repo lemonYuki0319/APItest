@@ -10,7 +10,7 @@ class CulturalAssetActions:
     def __init__(self):
         """初始化文化资产业务动作"""
         self.api = CulturalAssetAPI()
-    
+
     def login_APP(self, mobile, password, code=""):
         """APP端登录"""
         response = self.api.login_APP(mobile, password, code)
@@ -19,7 +19,7 @@ class CulturalAssetActions:
         else:
             logger.error(f"APP端登录失败: {response.get('msg')}")
         return response
-    
+
     def login_WEB(self, tenantName, username, password,rememberMe=True):
         """WEB端登录"""
         response = self.api.login_WEB(tenantName, username, password,rememberMe)
@@ -76,3 +76,41 @@ class CulturalAssetActions:
         else:
             logger.error(f"文化资产查询失败: {response.get('msg')}")
         return response
+
+    def multi_turn_dialogue(self,asset_data):
+        """多轮对话"""
+        if not self.api.token:
+            # 如果未登录，先登录
+            self.login_APP("18800000091", "a123456")
+        # 注意：这里调用的是api.multi_turn_dialogue（小写），不是api.Multi_turn_Dialogue
+        response = self.api.multi_turn_dialogue(asset_data)
+        # 对于SSE流式响应，我们只需要检查响应状态码
+        if response.status_code == 200:
+            logger.info("多轮对话生成成功")
+        else:
+            logger.error(f"多轮对话生成失败，状态码: {response.status_code}")
+        return response
+
+    def query_registered_assets(self,pageNo=1,pageSize=10):
+        """查询已注册资产"""
+        if not self.api.token:
+            # 如果未登录，先登录
+            self.login_WEB("芋道源码", "admin", "Szxc@2024")
+        response = self.api.query_registered_assets(pageNo,pageSize)
+        if response.get("code") == 200:
+            logger.info("查询已注册资产成功")
+        else:
+            logger.error(f"查询已注册资产失败: {response.get('msg')}")
+        return response
+
+    def get_conversation(self,asset_data):
+        """获取对话"""
+        if not self.api.token:
+            # 如果未登录，先登录
+            self.login_APP("18800000091", "a123456")
+        response, conversation_id = self.api.get_conversation(asset_data)
+        if response.get("code") == 200:
+            logger.info("获取对话成功")
+        else:
+            logger.error(f"获取对话失败: {response.get('msg')}")
+        return response, conversation_id

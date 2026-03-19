@@ -19,7 +19,7 @@ def test_register_asset_symm(cultural_asset_actions):
     # 准备资产数据
     asset_data = {
         "isRegistered": 1,
-        "cultureAssetName": "商业秘密3",
+        "cultureAssetName": "商业秘密333",
         "cultureAssetType": "2997845276013894001",
         "registerSubjectType": "1",
         "ownershipType": "1",
@@ -57,8 +57,7 @@ def test_register_asset_symm(cultural_asset_actions):
     asset_data=({
     "id": f"{asset_id}",
     "auditStatus": "2",
-    "auditReason": "1"
-    })
+    "auditReason": "1"})
 
     response = cultural_asset_actions.asset_Registration_Review(asset_data)
     assert response.get("code") == 200, f"资产登记审核失败: {response.get('msg')}"
@@ -66,8 +65,7 @@ def test_register_asset_symm(cultural_asset_actions):
     # 资产公示审核
     asset_data=({
     "id": f"{asset_id}",
-    "noticeStatus": "2"
-    })
+    "noticeStatus": "2"})
 
     response = cultural_asset_actions.asset_Disclosure_Review(asset_data)
     assert response.get("code") == 200, f"资产公示审核失败: {response.get('msg')}"

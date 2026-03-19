@@ -19,7 +19,7 @@ def test_register_asset_qywh(cultural_asset_actions):
     # 准备资产数据
     asset_data = {
         "isRegistered": 1,
-        "cultureAssetName": "企业文化002",
+        "cultureAssetName": "企业文化测试222",
         "cultureAssetType": "2997845276013894002",
         "registerSubjectType": "1",
         "ownershipType": "1",

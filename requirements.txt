@@ -1,16 +1,22 @@
 # 测试框架
 pytest==9.0.2
-pytest-allure-adaptor==1.7.10
 
 # HTTP 请求库
 requests==2.31.0
 urllib3==2.1.0
 
 # 配置文件解析
-pyyaml==6.0.1
+PyYAML==6.0.1
 
-# 数据处理
+# 数据处理（Excel）
 xlrd==2.0.1
 
-# 其他
-alure-pytest==2.13.2
+# 报告：Allure（pytest 插件）
+# 注意：不要再使用过时的 pytest-allure-adaptor（Allure1 时代产物），会与新版本 pytest/allure 冲突
+allure-pytest==2.13.2
+
+# 可选增强（按需启用）
+# pytest-xdist==3.6.1          # 并发执行
+# pytest-rerunfailures==14.0   # 失败重跑
+# python-dotenv==1.0.1         # .env 管理敏感信息/环境变量
+# jsonschema==4.22.0           # 响应结构校验

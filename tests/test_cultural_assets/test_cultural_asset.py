@@ -104,8 +104,9 @@ def test_create_asset_success(cultural_asset_actions):
     }
     
     # 创建资产
-    response = cultural_asset_actions.create_asset(asset_data)
+    response, asset_id = cultural_asset_actions.create_asset(asset_data)
     assert response.get("code") == 200, f"创建资产失败: {response.get('msg')}"
+    assert asset_id, "创建资产成功时 asset_id 不应为空"
 
 
 def test_create_asset_missing_required_field(cultural_asset_actions):
@@ -120,8 +121,9 @@ def test_create_asset_missing_required_field(cultural_asset_actions):
     }
     
     # 创建资产
-    response = cultural_asset_actions.create_asset(asset_data)
+    response, asset_id = cultural_asset_actions.create_asset(asset_data)
     assert response.get("code") != 200, "缺少必填字段应该失败"
+    assert not asset_id, "创建失败时 asset_id 应为空"
 
 def test_query_asset(cultural_asset_actions):
     """测试8: 查询资产"""

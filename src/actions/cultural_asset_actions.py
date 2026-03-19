@@ -11,6 +11,12 @@ class CulturalAssetActions:
         """初始化文化资产业务动作"""
         self.api = CulturalAssetAPI()
 
+    # 兼容旧用例/示例：部分用例里使用 cultural_asset_actions.login(mobile, password)
+    # 这里将其视为 APP 端登录的别名，避免初学者运行时直接 AttributeError
+    def login(self, mobile, password, code=""):
+        """兼容方法：等价于 login_APP"""
+        return self.login_APP(mobile, password, code)
+
     def login_APP(self, mobile, password, code=""):
         """APP端登录"""
         response = self.api.login_APP(mobile, password, code)
@@ -69,7 +75,7 @@ class CulturalAssetActions:
         """查询文化资产"""
         if not self.api.token:
             # 如果未登录，先登录
-            self.login("18671450802", "a123456")
+            self.login_APP("18671450802", "a123456")
         response = self.api.query_asset(pageNo, pageSize, cultureAssetName, cultureAssetType)
         if response.get("code") == 200:
             logger.info("文化资产查询成功")

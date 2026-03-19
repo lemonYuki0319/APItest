@@ -1,35 +1,30 @@
 # -*- coding: utf-8 -*-
 """
-配置工具类
+配置工具（兼容层）
+
+说明：
+- 本项目历史上同时存在 `config/config.py` 与 `src/utils/config.py` 两份重复实现，容易让初学者困惑、也不利于维护。
+- 现在统一以 `config/config.py` 作为唯一配置实现入口；
+- 本文件仅作为“向后兼容转发层”，避免旧代码导入路径变化导致报错。
+
+建议：
+- 新代码统一使用：`from config.config import get_config`
 """
 
-import yaml
-import os
-from config.constants import CONFIG_DIR
+from __future__ import annotations
 
-_config = None
+from config.config import (  # noqa: F401
+    get_admin_config,
+    get_api_config,
+    get_config,
+    get_env_config,
+    get_test_config,
+)
 
-def get_config():
-    """获取配置"""
-    global _config
-    if _config is None:
-        config_path = os.path.join(CONFIG_DIR, 'config.yaml')
-        with open(config_path, 'r', encoding='utf-8') as f:
-            _config = yaml.safe_load(f)
-    return _config
-
-def get_env_config():
-    """获取环境配置"""
-    return get_config()['env']
-
-def get_admin_config():
-    """获取管理员配置"""
-    return get_config()['admin']
-
-def get_api_config():
-    """获取 API 配置"""
-    return get_config()['api']
-
-def get_test_config():
-    """获取测试配置"""
-    return get_config()['test']
+__all__ = [
+    "get_config",
+    "get_env_config",
+    "get_admin_config",
+    "get_api_config",
+    "get_test_config",
+]

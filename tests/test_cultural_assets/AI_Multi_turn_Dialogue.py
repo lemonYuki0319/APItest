@@ -4,18 +4,26 @@
 import pytest
 import json
 import time
-from src.actions.cultural_asset_actions import CulturalAssetActions
+from src.actions.cultural_assets.cultural_asset_actions import CulturalAssetActions
+from src.actions.login import CulturalAssetActions as LoginActions
 
 @pytest.fixture(scope="function")
 def cultural_asset_actions():
     """创建文化资产业务动作实例"""
     return CulturalAssetActions()
 
-def test_Multi_turn_Dialogue(cultural_asset_actions):
+@pytest.fixture(scope="function")
+def login_actions():
+    """创建登录动作实例"""
+    return LoginActions()
+
+def test_Multi_turn_Dialogue(cultural_asset_actions, login_actions):
     """测试多轮对话"""
     #APP登录
-    login_response = cultural_asset_actions.login_APP("18671450802", "a123456")
+    login_response = login_actions.login_APP("18671450802", "a123456")
     assert login_response.get("code") == 200, f"APP登录失败: {login_response.get('msg')}"
+    # 将token传递给文化资产动作
+    cultural_asset_actions.api.token = login_actions.api.token
     #获取对话
     dialog_data = {"chatType":1,"useContext":True}
     response, conversation_id = cultural_asset_actions.get_conversation(dialog_data)
@@ -62,16 +70,18 @@ def test_Multi_turn_Dialogue(cultural_asset_actions):
 }
     response = cultural_asset_actions.multi_turn_dialogue(asset_data)
     assert response.status_code == 200, f"多轮对话生成失败，状态码: {response.status_code}"
-    
+
     # 等待5分钟，让多轮对话进行中
     print("等待10分钟，让多轮对话进行中...")
     time.sleep(600)  # 600秒 = 10分钟
 
     #WEB登录
-    login_response = cultural_asset_actions.login_WEB("芋道源码", "admin", "Szxc@2024")
+    login_response = login_actions.login_WEB("芋道源码", "admin", "Szxc@2024")
     assert login_response.get("code") == 200, f"WEB登录失败: {login_response.get('msg')}"
+    # 将token传递给文化资产动作
+    cultural_asset_actions.api.token = login_actions.api.token
     time.sleep(5)
-    
+
     response = cultural_asset_actions.query_registered_assets()
     assert response.get("code") == 200, f"查询登记资产失败: {response.get('msg')}"
     # 获取第一个资产的id

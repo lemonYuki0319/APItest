@@ -1,20 +1,15 @@
 """
-登记文化资产
+登记企业文化资产
 """
-import pytest
 import json
-from src.actions.cultural_asset_actions import CulturalAssetActions
 
 
-@pytest.fixture(scope="function")
-def cultural_asset_actions():
-    """创建文化资产业务动作实例"""
-    return CulturalAssetActions()
-
-def test_register_asset_qywh(cultural_asset_actions):
+def test_register_asset_qywh(cultural_asset_actions, login_actions):
     """登记企业文化资产"""
-    login_response = cultural_asset_actions.login_APP("18310665081", "a123456")
+    login_response = login_actions.login_APP("18310665081", "a123456")
     assert login_response.get("code") == 200, "登录失败"
+    # 将token传递给文化资产动作
+    cultural_asset_actions.api.token = login_actions.api.token
 
     # 准备资产数据
     asset_data = {
@@ -69,12 +64,14 @@ def test_register_asset_qywh(cultural_asset_actions):
 
     # 创建资产
     response, asset_id = cultural_asset_actions.create_asset(asset_data)
-    assert response.get("code") == 200, f"登记资产失败: {response.get('msg')}"
-    print(f"资产登记成功，资产ID: {asset_id}")
+    assert response.get("code") == 200, f"登记企业文化资产失败: {response.get('msg')}"
+    print(f"企业文化资产登记成功，资产ID: {asset_id}")
 
     #WEB端登录
-    login_response = cultural_asset_actions.login_WEB("芋道源码", "admin", "Szxc@2024")
+    login_response = login_actions.login_WEB("芋道源码", "admin", "Szxc@2024")
     assert login_response.get("code") == 200, "登录失败"
+    # 将token传递给文化资产动作
+    cultural_asset_actions.api.token = login_actions.api.token
     # 资产登记审核
     asset_data=({
     "id": f"{asset_id}",

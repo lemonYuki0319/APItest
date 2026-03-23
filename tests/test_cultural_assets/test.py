@@ -7,11 +7,11 @@ from urllib3 import response
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, PROJECT_ROOT)
 
-from src.actions.cultural_asset_actions import CulturalAssetActions
+from src.actions.login import CulturalAssetActions
 from src.api.auth_api import AuthAPI
 
 def test_APPlogin():
-    response = CulturalAssetActions().login("18671450802", "a123456")
+    response = CulturalAssetActions().login_APP("18671450802", "a123456")
     assert response.get("code") == 200, f"登录失败: {response.get('msg')}"
     access_token = response.get('data', {}).get('accessToken')
     print(f"获取accessToken: {access_token}")

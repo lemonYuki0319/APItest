@@ -1,16 +1,20 @@
-2026-03-19 10:58:08 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
-2026-03-19 10:58:08 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
-2026-03-19 10:58:09 [DEBUG] https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
-2026-03-19 10:58:09 [INFO] APP端登录成功
-2026-03-19 10:58:09 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
-2026-03-19 10:58:09 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
-2026-03-19 10:58:09 [INFO] 文化资产登记成功
-2026-03-19 10:58:09 [INFO] [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
-2026-03-19 10:58:09 [DEBUG] https://www.whhnhy.com:38868 "POST /admin-api/system/auth/login HTTP/1.1" 200 None
-2026-03-19 10:58:09 [INFO] WEB端登录成功
-2026-03-19 10:58:09 [INFO] [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
-2026-03-19 10:58:12 [DEBUG] https://www.whhnhy.com:38868 "PUT /admin-api/digital/culture/asset/audit HTTP/1.1" 200 None
-2026-03-19 10:58:12 [INFO] 资产登记审核成功
-2026-03-19 10:58:12 [INFO] [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
-2026-03-19 10:58:12 [DEBUG] https://www.whhnhy.com:38868 "PUT /admin-api/digital/culture/asset/update-notice-status HTTP/1.1" 200 None
-2026-03-19 10:58:12 [INFO] 资产公示审核成功
+2026-03-23 11:08:08 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-23 11:08:08 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-03-23 11:08:09 [DEBUG] https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
+2026-03-23 11:08:09 [INFO] APP端登录成功
+2026-03-23 11:08:09 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-23 11:08:09 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-03-23 11:08:09 [DEBUG] https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
+2026-03-23 11:08:09 [ERROR] APP端登录失败: 手机号不能为空
+2026-03-23 11:08:09 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-23 11:08:09 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-03-23 11:08:09 [DEBUG] https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
+2026-03-23 11:08:09 [ERROR] APP端登录失败: 密码长度为 4-16 位
+2026-03-23 11:08:09 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-23 11:08:09 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-03-23 11:08:09 [DEBUG] https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
+2026-03-23 11:08:09 [ERROR] APP端登录失败: 登录失败，账号密码不正确
+2026-03-23 11:08:09 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-23 11:08:09 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-03-23 11:08:10 [DEBUG] https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
+2026-03-23 11:08:10 [ERROR] APP端登录失败: 用户不存在

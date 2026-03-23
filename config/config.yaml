@@ -1,0 +1,32 @@
+# 生产环境配置
+# env:
+#   base_url: "https://www.whhnhy.com:8900"  # API 基础地址
+#   timeout: 30                              # 请求超时时间
+#   retry_count: 3                           # 失败重试次数
+# 开发环境配置
+dev:
+  base_url: "https://www.whhnhy.com:38868"        # API 基础地址
+  timeout: 30                              # 请求超时时间
+  retry_count: 3                           # 失败重试次数
+# 测试配置
+test:
+  verify_ssl: false                        # 是否验证 SSL
+  new_password: "a123456"                  # 默认新密码
+
+# 管理员配置
+admin:
+  username: "admin"
+  password: "Szxc@2024"
+
+# 日志配置
+log:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+
+# API 配置
+api:
+  auth:
+    login: "/admin-api/system/auth/login"
+  user:
+    update_password: "/admin-api/converge/user/update-password"

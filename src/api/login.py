@@ -5,9 +5,9 @@
 
 from src.api.base_api import BaseAPI
 
-class UserAPI(BaseAPI):
+class LoginAPI(BaseAPI):
     def __init__(self, token=None):
-        """初始化用户 API 客户端"""
+        """初始化登录 API 客户端"""
         super().__init__()
         if token:
             self.token = token

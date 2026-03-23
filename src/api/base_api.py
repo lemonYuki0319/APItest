@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-API 基础类，封装通用的 HTTP 请求方法
+API 基础类 - 封装通用的 HTTP 请求方法
 
-面向初学者的关键点：
-1. timeout 必须在每次请求时传入（requests.Session 没有 session.timeout 这种全局属性）
-2. 建议统一入口 request()，便于做：重试、日志、异常处理、Allure 附件、header/token 注入
-3. 不要在业务 API 里到处写重复的 get/post/put/delete 逻辑
+核心设计：
+1. 统一请求入口 request()，集中处理：重试、日志、异常、响应保存
+2. 自动注入 token 到请求头
+3. 支持配置化：base_url、timeout、retry_count、verify_ssl
 """
 
 from __future__ import annotations
@@ -28,13 +28,17 @@ from src.utils.logger import logger
 class BaseAPI:
     """所有 API Client 的基类"""
 
+    # =========================================================================
+    # 初始化
+    # =========================================================================
+    
     def __init__(self) -> None:
-        # 统一从配置中心加载（带缓存）
+        # 加载配置
         self.config: Dict[str, Any] = get_config()
-
         env_cfg = self.config.get("env", {})
         test_cfg = self.config.get("test", {})
 
+        # 基础配置
         self.base_url: str = env_cfg.get("base_url", "").rstrip("/")
         self.timeout: int | float = env_cfg.get("timeout", 30)
         self.retry_count: int = int(env_cfg.get("retry_count", 0))
@@ -44,22 +48,24 @@ class BaseAPI:
         self.session = requests.Session()
         self.session.verify = self.verify_ssl
 
-        # token（由登录接口写入）
+        # Token（由登录接口写入）
         self.token: Optional[str] = None
 
-        # 响应保存目录（可选，用于排查问题）
+        # 响应保存目录（用于排查问题）
         self.response_dir = os.path.join(REPORTS_DIR, "response")
         os.makedirs(self.response_dir, exist_ok=True)
 
-    # ----------------------------
-    # 基础能力
-    # ----------------------------
+    # =========================================================================
+    # 内部工具方法
+    # =========================================================================
+
     def _build_url(self, endpoint: str) -> str:
+        """构建完整 URL"""
         if not endpoint.startswith("/"):
             endpoint = "/" + endpoint
         return f"{self.base_url}{endpoint}"
 
-    def get_headers(self) -> Dict[str, str]:
+    def _get_headers(self) -> Dict[str, str]:
         """获取默认请求头（自动携带 token）"""
         headers: Dict[str, str] = {"Accept": "application/json, text/plain, */*"}
         if self.token:
@@ -67,13 +73,14 @@ class BaseAPI:
         return headers
 
     def _merge_headers(self, headers: Optional[Dict[str, str]]) -> Dict[str, str]:
-        merged = self.get_headers()
+        """合并默认请求头和自定义请求头"""
+        merged = self._get_headers()
         if headers:
             merged.update(headers)
         return merged
 
     def _save_response(self, method: str, endpoint: str, response: Response) -> None:
-        """保存响应信息到文件，便于定位问题（不影响测试执行）"""
+        """保存响应到文件（便于排查问题）"""
         try:
             safe_endpoint = endpoint.strip("/").replace("/", "_") or "root"
             ts = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
@@ -93,14 +100,18 @@ class BaseAPI:
             logger.debug(f"保存响应文件失败（可忽略）: {e}")
 
     def _parse_json(self, response: Response) -> Dict[str, Any]:
-        """把 Response 解析为 dict；若不是 JSON，抛出带上下文的异常"""
+        """解析响应为 JSON"""
         try:
             return response.json()
         except Exception:
-            # 尽量带上关键上下文，方便初学者定位
             raise ValueError(
-                f"响应不是合法 JSON: status={response.status_code}, url={response.url}, text={response.text[:500]}"
+                f"响应不是合法 JSON: status={response.status_code}, "
+                f"url={response.url}, text={response.text[:500]}"
             )
+
+    # =========================================================================
+    # 核心请求方法
+    # =========================================================================
 
     def request(
         self,
@@ -115,23 +126,36 @@ class BaseAPI:
         timeout: Optional[int | float] = None,
     ) -> Response | Dict[str, Any]:
         """
-        统一请求入口：
-        - 自动拼接 base_url
-        - 自动注入 token header
-        - 支持 retry_count
-        - 默认返回 JSON(dict)；stream=True 时返回 Response（用于 SSE/下载等）
+        统一请求入口
+        
+        Args:
+            method: HTTP 方法 (GET/POST/PUT/DELETE)
+            endpoint: API 端点路径
+            params: URL 查询参数
+            json_body: JSON 请求体
+            data: Form 请求体
+            headers: 自定义请求头
+            stream: 是否流式响应（用于 SSE/下载）
+            timeout: 请求超时时间（秒）
+            
+        Returns:
+            正常返回 JSON(dict)；stream=True 时返回 Response 对象
+            
+        Raises:
+            RuntimeError: 请求失败（包括重试后仍失败）
         """
         url = self._build_url(endpoint)
         merged_headers = self._merge_headers(headers)
         actual_timeout = self.timeout if timeout is None else timeout
-
         last_exc: Optional[Exception] = None
 
         for attempt in range(self.retry_count + 1):
             try:
                 logger.info(
-                    f"[HTTP] {method.upper()} {url} attempt={attempt + 1}/{self.retry_count + 1}"
+                    f"[HTTP] {method.upper()} {url} "
+                    f"attempt={attempt + 1}/{self.retry_count + 1}"
                 )
+                
                 resp = self.session.request(
                     method=method.upper(),
                     url=url,
@@ -146,7 +170,7 @@ class BaseAPI:
                 # 保存响应（便于排查）
                 self._save_response(method, endpoint, resp)
 
-                # 这里不强制 resp.raise_for_status()：因为很多业务用 code 字段表示业务成功与否
+                # 流式响应直接返回 Response 对象
                 if stream:
                     return resp
 
@@ -163,19 +187,47 @@ class BaseAPI:
             if attempt < self.retry_count:
                 time.sleep(min(0.5 * (attempt + 1), 2.0))
 
-        raise RuntimeError(f"请求失败（已重试 {self.retry_count} 次）: {method.upper()} {url}") from last_exc
+        raise RuntimeError(
+            f"请求失败（已重试 {self.retry_count} 次）: {method.upper()} {url}"
+        ) from last_exc
 
-    # ----------------------------
-    # 便捷方法：保持对旧代码的兼容（返回 dict）
-    # ----------------------------
-    def get(self, endpoint: str, params: Optional[Dict[str, Any]] = None, headers: Optional[Dict[str, str]] = None):
+    # =========================================================================
+    # 便捷方法（保持旧代码兼容）
+    # =========================================================================
+
+    def get(
+        self,
+        endpoint: str,
+        params: Optional[Dict[str, Any]] = None,
+        headers: Optional[Dict[str, str]] = None
+    ) -> Dict[str, Any]:
+        """发送 GET 请求"""
         return self.request("GET", endpoint, params=params, headers=headers)
 
-    def post(self, endpoint: str, json: Any = None, data: Any = None, headers: Optional[Dict[str, str]] = None):
+    def post(
+        self,
+        endpoint: str,
+        json: Any = None,
+        data: Any = None,
+        headers: Optional[Dict[str, str]] = None
+    ) -> Dict[str, Any]:
+        """发送 POST 请求"""
         return self.request("POST", endpoint, json_body=json, data=data, headers=headers)
 
-    def put(self, endpoint: str, json: Any = None, data: Any = None, headers: Optional[Dict[str, str]] = None):
+    def put(
+        self,
+        endpoint: str,
+        json: Any = None,
+        data: Any = None,
+        headers: Optional[Dict[str, str]] = None
+    ) -> Dict[str, Any]:
+        """发送 PUT 请求"""
         return self.request("PUT", endpoint, json_body=json, data=data, headers=headers)
 
-    def delete(self, endpoint: str, headers: Optional[Dict[str, str]] = None):
+    def delete(
+        self,
+        endpoint: str,
+        headers: Optional[Dict[str, str]] = None
+    ) -> Dict[str, Any]:
+        """发送 DELETE 请求"""
         return self.request("DELETE", endpoint, headers=headers)

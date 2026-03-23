@@ -10,13 +10,7 @@ class LoginActions:
     def __init__(self):
         """初始化登录动作"""
         self.api = CulturalAssetAPI()
-
-    # 兼容旧用例/示例：部分用例里使用 login_actions.login(mobile, password)
-    # 这里将其视为 APP 端登录的别名，避免初学者运行时直接 AttributeError
-    def login(self, mobile, password, code=""):
-        """兼容方法：等价于 login_APP"""
-        return self.login_APP(mobile, password, code)
-
+        
     def login_APP(self, mobile, password, code=""):
         """APP端登录"""
         response = self.api.login_APP(mobile, password, code)

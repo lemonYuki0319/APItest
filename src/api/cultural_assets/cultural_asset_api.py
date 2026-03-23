@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-文化资产 API 客户端（不含登录接口）
+文化资产 API 客户端
 """
 
 from src.api.base_api import BaseAPI

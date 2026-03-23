@@ -4,6 +4,7 @@ Allure 报告辅助工具类
 
 提供统一的 Allure 报告封装，简化测试用例中的 Allure 操作。
 包括：测试步骤、附件添加、标签管理、动态描述等功能。
+allure serve reports/allure-results打开报告
 """
 
 import json

@@ -42,3 +42,11 @@
 2026-03-23 11:08:09 [ERROR] APP端登录失败: 登录失败，账号密码不正确
 2026-03-23 11:08:09 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
 2026-03-23 11:08:10 [ERROR] APP端登录失败: 用户不存在
+2026-03-23 14:00:16 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-23 14:00:17 [ERROR] APP端登录失败: Unable to find instance for converge-server
+2026-03-23 14:01:50 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-23 14:01:50 [ERROR] APP端登录失败: 系统异常
+2026-03-23 14:01:59 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-23 14:01:59 [ERROR] APP端登录失败: 系统异常
+2026-03-23 14:04:31 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-23 14:04:32 [INFO] APP端登录成功

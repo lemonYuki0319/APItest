@@ -4,10 +4,10 @@
   "status_code": 200,
   "headers": {
     "Server": "nginx/1.24.0",
-    "Date": "Mon, 23 Mar 2026 02:49:18 GMT",
+    "Date": "Mon, 23 Mar 2026 06:01:50 GMT",
     "Content-Type": "application/json;charset=UTF-8",
-    "Content-Length": "64",
+    "Content-Length": "33",
     "Connection": "keep-alive"
   },
-  "text": "{\"code\":503,\"msg\":\"Unable to find instance for converge-server\"}"
+  "text": "{\"code\":500,\"msg\":\"系统异常\"}"
 }

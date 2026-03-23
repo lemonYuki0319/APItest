@@ -12,7 +12,6 @@ PyYAML==6.0.1
 xlrd==2.0.1
 
 # 报告：Allure（pytest 插件）
-# 注意：不要再使用过时的 pytest-allure-adaptor（Allure1 时代产物），会与新版本 pytest/allure 冲突
 allure-pytest==2.13.2
 
 # 可选增强（按需启用）

@@ -50,3 +50,33 @@
 2026-03-23 14:01:59 [ERROR] APP端登录失败: 系统异常
 2026-03-23 14:04:31 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
 2026-03-23 14:04:32 [INFO] APP端登录成功
+2026-03-23 18:35:16 - interface_test - INFO - [HTTP] POST /converge-app-api/converge/auth/login attempt=1/1
+2026-03-23 18:35:16 - interface_test - WARNING - [HTTP] 请求异常: Invalid URL '/converge-app-api/converge/auth/login': No scheme supplied. Perhaps you meant https:///converge-app-api/converge/auth/login?
+2026-03-23 18:35:16 - interface_test - INFO - [HTTP] POST /converge-app-api/converge/auth/login attempt=1/1
+2026-03-23 18:35:16 - interface_test - WARNING - [HTTP] 请求异常: Invalid URL '/converge-app-api/converge/auth/login': No scheme supplied. Perhaps you meant https:///converge-app-api/converge/auth/login?
+2026-03-23 18:35:16 - interface_test - INFO - [HTTP] POST /converge-app-api/converge/auth/login attempt=1/1
+2026-03-23 18:35:16 - interface_test - WARNING - [HTTP] 请求异常: Invalid URL '/converge-app-api/converge/auth/login': No scheme supplied. Perhaps you meant https:///converge-app-api/converge/auth/login?
+2026-03-23 18:35:17 - interface_test - INFO - [HTTP] POST /converge-app-api/converge/auth/login attempt=1/1
+2026-03-23 18:35:17 - interface_test - WARNING - [HTTP] 请求异常: Invalid URL '/converge-app-api/converge/auth/login': No scheme supplied. Perhaps you meant https:///converge-app-api/converge/auth/login?
+2026-03-23 18:35:17 - interface_test - INFO - [HTTP] POST /converge-app-api/converge/auth/login attempt=1/1
+2026-03-23 18:35:17 - interface_test - WARNING - [HTTP] 请求异常: Invalid URL '/converge-app-api/converge/auth/login': No scheme supplied. Perhaps you meant https:///converge-app-api/converge/auth/login?
+2026-03-23 18:35:17 - interface_test - INFO - [HTTP] POST /converge-app-api/converge/auth/login attempt=1/1
+2026-03-23 18:35:17 - interface_test - WARNING - [HTTP] 请求异常: Invalid URL '/converge-app-api/converge/auth/login': No scheme supplied. Perhaps you meant https:///converge-app-api/converge/auth/login?
+2026-03-23 18:35:17 - interface_test - INFO - [HTTP] POST /converge-app-api/converge/auth/login attempt=1/1
+2026-03-23 18:35:17 - interface_test - WARNING - [HTTP] 请求异常: Invalid URL '/converge-app-api/converge/auth/login': No scheme supplied. Perhaps you meant https:///converge-app-api/converge/auth/login?
+2026-03-23 18:35:17 - interface_test - INFO - [HTTP] POST /converge-app-api/converge/auth/login attempt=1/1
+2026-03-23 18:35:17 - interface_test - WARNING - [HTTP] 请求异常: Invalid URL '/converge-app-api/converge/auth/login': No scheme supplied. Perhaps you meant https:///converge-app-api/converge/auth/login?
+2026-03-23 18:35:59 - interface_test - INFO - [HTTP] POST /converge-app-api/converge/auth/login attempt=1/1
+2026-03-23 18:35:59 - interface_test - WARNING - [HTTP] 请求异常: Invalid URL '/converge-app-api/converge/auth/login': No scheme supplied. Perhaps you meant https:///converge-app-api/converge/auth/login?
+2026-03-23 18:36:38 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:8900/converge-app-api/converge/auth/login attempt=1/4
+2026-03-23 18:36:38 - interface_test - WARNING - [HTTP] 解析/处理异常: 响应不是合法 JSON: status=400, url=https://www.whhnhy.com:8900/converge-app-api/converge/auth/login, text=<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>BadRequest</Code><Message>An error occurred when parsing the HTTP request POST at &#39;/converge-app-api/converge/auth/login&#39;</Message><Resource>/converge-app-api/converge/auth/login</Resource><RequestId></RequestId><HostId></HostId></Error>
+2026-03-23 18:36:39 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:8900/converge-app-api/converge/auth/login attempt=2/4
+2026-03-23 18:36:39 - interface_test - WARNING - [HTTP] 解析/处理异常: 响应不是合法 JSON: status=400, url=https://www.whhnhy.com:8900/converge-app-api/converge/auth/login, text=<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>BadRequest</Code><Message>An error occurred when parsing the HTTP request POST at &#39;/converge-app-api/converge/auth/login&#39;</Message><Resource>/converge-app-api/converge/auth/login</Resource><RequestId></RequestId><HostId></HostId></Error>
+2026-03-23 18:36:40 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:8900/converge-app-api/converge/auth/login attempt=3/4
+2026-03-23 18:36:40 - interface_test - WARNING - [HTTP] 解析/处理异常: 响应不是合法 JSON: status=400, url=https://www.whhnhy.com:8900/converge-app-api/converge/auth/login, text=<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>BadRequest</Code><Message>An error occurred when parsing the HTTP request POST at &#39;/converge-app-api/converge/auth/login&#39;</Message><Resource>/converge-app-api/converge/auth/login</Resource><RequestId></RequestId><HostId></HostId></Error>
+2026-03-23 18:36:41 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:8900/converge-app-api/converge/auth/login attempt=4/4
+2026-03-23 18:36:41 - interface_test - WARNING - [HTTP] 解析/处理异常: 响应不是合法 JSON: status=400, url=https://www.whhnhy.com:8900/converge-app-api/converge/auth/login, text=<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>BadRequest</Code><Message>An error occurred when parsing the HTTP request POST at &#39;/converge-app-api/converge/auth/login&#39;</Message><Resource>/converge-app-api/converge/auth/login</Resource><RequestId></RequestId><HostId></HostId></Error>

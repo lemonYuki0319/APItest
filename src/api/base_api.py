@@ -59,27 +59,27 @@ class BaseAPI:
     # 内部工具方法
     # =========================================================================
 
-    def _build_url(self, endpoint: str) -> str:
+    def build_url(self, endpoint: str) -> str:
         """构建完整 URL"""
         if not endpoint.startswith("/"):
             endpoint = "/" + endpoint
         return f"{self.base_url}{endpoint}"
 
-    def _get_headers(self) -> Dict[str, str]:
+    def get_headers(self) -> Dict[str, str]:
         """获取默认请求头（自动携带 token）"""
         headers: Dict[str, str] = {"Accept": "application/json, text/plain, */*"}
         if self.token:
             headers["Authorization"] = f"Bearer {self.token}"
         return headers
 
-    def _merge_headers(self, headers: Optional[Dict[str, str]]) -> Dict[str, str]:
+    def merge_headers(self, headers: Optional[Dict[str, str]]) -> Dict[str, str]:
         """合并默认请求头和自定义请求头"""
-        merged = self._get_headers()
+        merged = self.get_headers()
         if headers:
             merged.update(headers)
         return merged
 
-    def _save_response(self, method: str, endpoint: str, response: Response) -> None:
+    def save_response(self, method: str, endpoint: str, response: Response) -> None:
         """保存响应到文件（便于排查问题）"""
         try:
             safe_endpoint = endpoint.strip("/").replace("/", "_") or "root"
@@ -99,7 +99,7 @@ class BaseAPI:
         except Exception as e:
             logger.debug(f"保存响应文件失败（可忽略）: {e}")
 
-    def _parse_json(self, response: Response) -> Dict[str, Any]:
+    def parse_json(self, response: Response) -> Dict[str, Any]:
         """解析响应为 JSON"""
         try:
             return response.json()
@@ -144,8 +144,8 @@ class BaseAPI:
         Raises:
             RuntimeError: 请求失败（包括重试后仍失败）
         """
-        url = self._build_url(endpoint)
-        merged_headers = self._merge_headers(headers)
+        url = self.build_url(endpoint)
+        merged_headers = self.merge_headers(headers)
         actual_timeout = self.timeout if timeout is None else timeout
         last_exc: Optional[Exception] = None
 
@@ -168,13 +168,13 @@ class BaseAPI:
                 )
 
                 # 保存响应（便于排查）
-                self._save_response(method, endpoint, resp)
+                self.save_response(method, endpoint, resp)
 
                 # 流式响应直接返回 Response 对象
                 if stream:
                     return resp
 
-                return self._parse_json(resp)
+                return self.parse_json(resp)
 
             except RequestException as e:
                 last_exc = e

@@ -1,0 +1,15 @@
+{
+  "url": "https://www.whhnhy.com:8900/converge-app-api/converge/auth/login",
+  "method": "POST",
+  "status_code": 400,
+  "headers": {
+    "Server": "nginx/1.24.0",
+    "Date": "Mon, 23 Mar 2026 10:36:39 GMT",
+    "Content-Type": "application/xml",
+    "Content-Length": "297",
+    "Connection": "keep-alive",
+    "Accept-Ranges": "bytes",
+    "Vary": "Origin"
+  },
+  "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>BadRequest</Code><Message>An error occurred when parsing the HTTP request POST at &#39;/converge-app-api/converge/auth/login&#39;</Message><Resource>/converge-app-api/converge/auth/login</Resource><RequestId></RequestId><HostId></HostId></Error>"
+}

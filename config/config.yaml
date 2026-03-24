@@ -1,13 +1,14 @@
-# 生产环境配置
+#生产环境配置
 # env:
-#   base_url: "https://www.whhnhy.com:8900"  # API 基础地址
+#   base_url: "https://www.whhnhy.com:8966"  # API 基础地址
 #   timeout: 30                              # 请求超时时间
 #   retry_count: 3                           # 失败重试次数
-# 开发环境配置
-dev:
-  base_url: "https://www.whhnhy.com:38868"        # API 基础地址
+# 测试环境配置
+env:
+  base_url: "https://www.whhnhy.com:38868"  # API 基础地址
   timeout: 30                              # 请求超时时间
   retry_count: 3                           # 失败重试次数
+
 # 测试配置
 test:
   verify_ssl: false                        # 是否验证 SSL

@@ -1,0 +1,28 @@
+{
+  "isRegistered": 1,
+  "cultureAssetName": "数字商标",
+  "cultureAssetType": "2997845276013893005",
+  "registerSubjectType": "1",
+  "ownershipType": "1",
+  "coOwnerSaveReqList": [
+    {
+      "coOwnerName": "",
+      "coOwnerPhone": ""
+    }
+  ],
+  "assetDesc": "测试",
+  "assetImgUrl": [
+    {
+      "name": "05数字出版许可证（非必传，仅供参考）.png",
+      "url": "https://www.whhnhy.com:29000/szxc/942fbdf590c51fc498d11074733e9fa5552b0f9012dfa7e81efd2084b0717d6f.png"
+    }
+  ],
+  "ownershipFileUrl": [
+    {
+      "name": "04商标注册证（非必传，仅供参考）.png",
+      "url": "https://www.whhnhy.com:29000/szxc/942fbdf590c51fc498d11074733e9fa5552b0f9012dfa7e81efd2084b0717d6f.png"
+    }
+  ],
+  "assetDetailValidJson": "{\"trademarkName\": \"测试商标\", \"trademarkCategory\": \"35类\", \"registrationNumber\": \"12345678\", \"registrationDate\": \"2024-01-01\", \"validityPeriod\": \"2034-01-01\", \"trademarkOwner\": \"测试公司\"}",
+  "assetDetailJson": "[{\"label\": \"商标名称\", \"name\": \"trademarkName\", \"type\": \"text\", \"value\": \"测试商标\"}, {\"label\": \"商标类别\", \"name\": \"trademarkCategory\", \"type\": \"text\", \"value\": \"35类\"}, {\"label\": \"注册号\", \"name\": \"registrationNumber\", \"type\": \"text\", \"value\": \"12345678\"}]"
+}

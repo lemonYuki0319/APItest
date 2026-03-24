@@ -1,0 +1,36 @@
+2026-03-24 09:14:20 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-24 09:14:21 - interface_test - INFO - APP端登录成功
+2026-03-24 09:17:06 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-24 09:17:06 - interface_test - INFO - APP端登录成功
+2026-03-24 09:18:45 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-24 09:18:45 - interface_test - INFO - APP端登录成功
+2026-03-24 09:18:45 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-03-24 09:18:46 - interface_test - INFO - 文化资产登记成功
+2026-03-24 09:18:46 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-03-24 09:18:46 - interface_test - INFO - WEB端登录成功
+2026-03-24 09:18:46 - interface_test - INFO - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-03-24 09:18:49 - interface_test - INFO - 资产登记审核成功
+2026-03-24 09:18:49 - interface_test - INFO - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-03-24 09:18:49 - interface_test - INFO - 资产公示审核成功
+2026-03-24 09:19:14 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-24 09:19:14 - interface_test - INFO - APP端登录成功
+2026-03-24 09:19:14 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-24 09:19:14 - interface_test - ERROR - APP端登录失败: 手机号不能为空
+2026-03-24 09:19:14 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-24 09:19:14 - interface_test - ERROR - APP端登录失败: 密码长度为 4-16 位
+2026-03-24 09:19:15 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-24 09:19:15 - interface_test - ERROR - APP端登录失败: 登录失败，账号密码不正确
+2026-03-24 09:19:15 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-24 09:19:15 - interface_test - ERROR - APP端登录失败: 用户不存在
+2026-03-24 09:19:15 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-24 09:19:15 - interface_test - INFO - APP端登录成功
+2026-03-24 09:19:15 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-03-24 09:19:16 - interface_test - INFO - 文化资产登记成功
+2026-03-24 09:19:16 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-24 09:19:16 - interface_test - INFO - APP端登录成功
+2026-03-24 09:19:16 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-03-24 09:19:16 - interface_test - ERROR - 文化资产登记失败: 文化资产分类数据不存在
+2026-03-24 09:19:16 - interface_test - INFO - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-03-24 09:19:16 - interface_test - INFO - APP端登录成功
+2026-03-24 09:19:16 - interface_test - INFO - [HTTP] GET https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/page attempt=1/4
+2026-03-24 09:19:17 - interface_test - INFO - 文化资产查询成功

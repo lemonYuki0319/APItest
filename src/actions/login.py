@@ -3,13 +3,13 @@
 仅包含登录动作
 """
 
-from src.api.login import UserAPI as CulturalAssetAPI
+from src.api.login import LoginAPI
 from src.utils.logger import logger
 
 class LoginActions:
     def __init__(self):
         """初始化登录动作"""
-        self.api = CulturalAssetAPI()
+        self.api = LoginAPI()
         
     def login_APP(self, mobile, password, code=""):
         """APP端登录"""

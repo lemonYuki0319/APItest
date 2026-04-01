@@ -5,7 +5,7 @@ import pytest
 import json
 import time
 from src.actions.cultural_assets.cultural_asset_actions import CulturalAssetActions
-from src.actions.login import CulturalAssetActions as LoginActions
+from src.actions.login import LoginActions
 
 @pytest.fixture(scope="function")
 def cultural_asset_actions():

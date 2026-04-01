@@ -22,7 +22,7 @@ admin:
 # 日志配置
 log:
   level: "INFO"
-  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  format: "%(asctime)s - %(levelname)s -%(filename)s -%(lineno)s - %(message)s"
   date_format: "%Y-%m-%d %H:%M:%S"
 
 # API 配置

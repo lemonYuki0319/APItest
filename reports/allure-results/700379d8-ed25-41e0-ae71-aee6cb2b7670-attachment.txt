@@ -1,2 +1,0 @@
-[32mINFO    [0m interface_test:base_api.py:154 [HTTP] POST /converge-app-api/converge/auth/login attempt=1/1
-[33mWARNING [0m interface_test:base_api.py:181 [HTTP] 请求异常: Invalid URL '/converge-app-api/converge/auth/login': No scheme supplied. Perhaps you meant https:///converge-app-api/converge/auth/login?

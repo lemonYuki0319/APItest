@@ -7,7 +7,7 @@ import json
 def test_register_asset_qywh(cultural_asset_actions, login_actions):
     """登记企业文化资产"""
     login_response = login_actions.login_APP("18310665081", "a123456")
-    assert login_response.get("code") == 200, "登录失败"
+    assert login_response.get("code") == 200, f"登录失败: {login_response.get('msg')}"
     # 将token传递给文化资产动作
     cultural_asset_actions.api.token = login_actions.api.token
 
@@ -66,10 +66,10 @@ def test_register_asset_qywh(cultural_asset_actions, login_actions):
     response, asset_id = cultural_asset_actions.create_asset(asset_data)
     assert response.get("code") == 200, f"登记企业文化资产失败: {response.get('msg')}"
     print(f"企业文化资产登记成功，资产ID: {asset_id}")
-
+    
     #WEB端登录
     login_response = login_actions.login_WEB("芋道源码", "admin", "Szxc@2024")
-    assert login_response.get("code") == 200, "登录失败"
+    assert login_response.get("code") == 200, f"登录失败: {login_response.get('msg')}"
     # 将token传递给文化资产动作
     cultural_asset_actions.api.token = login_actions.api.token
     # 资产登记审核

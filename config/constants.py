@@ -5,7 +5,6 @@
 
 import os
 import sys
-
 # 项目根目录
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

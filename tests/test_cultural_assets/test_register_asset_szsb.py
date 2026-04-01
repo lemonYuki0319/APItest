@@ -1,21 +1,11 @@
 """
 登记文化资产
 """
-import pytest
 import json
-from src.actions.cultural_assets.cultural_asset_actions import CulturalAssetActions
-from src.actions.login import CulturalAssetActions as LoginActions
+from src.utils.logger import Logger
 
 
-@pytest.fixture(scope="function")
-def cultural_asset_actions():
-    """创建文化资产业务动作实例"""
-    return CulturalAssetActions()
-
-@pytest.fixture(scope="function")
-def login_actions():
-    """创建登录动作实例"""
-    return LoginActions()
+logger = Logger(__name__).get_logger()
 
 def test_register_asset_szsb(cultural_asset_actions, login_actions):
     """登记数字商标文化资产"""

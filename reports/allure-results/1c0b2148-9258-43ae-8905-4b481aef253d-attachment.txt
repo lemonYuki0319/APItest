@@ -1,8 +1,0 @@
-[32mINFO    [0m interface_test:base_api.py:154 [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
-[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): www.whhnhy.com:38868
-[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
-[32mINFO    [0m interface_test:login.py:18 APP端登录成功
-[32mINFO    [0m interface_test:base_api.py:154 [HTTP] GET https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/page attempt=1/4
-[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): www.whhnhy.com:38868
-[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://www.whhnhy.com:38868 "GET /api/converge-app-api/digital/culture/asset/page?pageNo=1&pageSize=10&cultureAssetName=&cultureAssetType=2997845276013892013 HTTP/1.1" 200 None
-[32mINFO    [0m interface_test:cultural_asset_actions.py:65 文化资产查询成功

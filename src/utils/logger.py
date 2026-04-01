@@ -28,7 +28,7 @@ class Logger:
         >>> logger.error("这是一条错误日志")
     """
     
-    def __init__(self, name: str = 'interface_test', log_level: int | None = None) -> None:
+    def __init__(self, name: str = 'my_project_name', log_level: int | None = None) -> None:
         """
         初始化日志记录器
         
@@ -53,8 +53,7 @@ class Logger:
         
         # 设置日志格式（从配置读取或使用默认格式）
         log_format = config.get('log', {}).get(
-            'format', 
-            '%(asctime)s - %(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s'
+            'format'
         )
         date_format = config.get('log', {}).get('date_format', '%Y-%m-%d %H:%M:%S')
         
@@ -71,8 +70,9 @@ class Logger:
             console_handler = logging.StreamHandler()
             console_handler.setLevel(actual_level)
             console_handler.setFormatter(formatter)
+            #给日志添加控制台处理器
             self.logger.addHandler(console_handler)
-            
+
             # 2. 文件处理器（按日期命名）
             log_file = os.path.join(
                 LOGS_DIR,
@@ -81,6 +81,7 @@ class Logger:
             file_handler = logging.FileHandler(log_file, encoding='utf-8')
             file_handler.setLevel(actual_level)
             file_handler.setFormatter(formatter)
+            #给日志添加文件处理器
             self.logger.addHandler(file_handler)
     
     def get_logger(self) -> logging.Logger:

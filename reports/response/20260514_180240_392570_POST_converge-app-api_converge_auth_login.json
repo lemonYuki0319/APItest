@@ -1,0 +1,21 @@
+{
+  "url": "https://www.whhnhy.com:38868/converge-app-api/converge/auth/login",
+  "method": "POST",
+  "status_code": 200,
+  "headers": {
+    "Server": "nginx/1.24.0",
+    "Date": "Thu, 14 May 2026 10:02:41 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+    "trace-id": "",
+    "X-Content-Type-Options": "nosniff",
+    "X-XSS-Protection": "1; mode=block",
+    "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+    "Pragma": "no-cache",
+    "Expires": "0",
+    "Content-Encoding": "gzip"
+  },
+  "text": "{\"code\":200,\"data\":{\"userId\":\"1913060399566032898\",\"accessToken\":\"b283dcbdc13d4ab6b67c23c709d2198f\",\"refreshToken\":\"3e7bba2f69d34c0f8a4bba2a1fae4929\",\"expiresTime\":1781431361653,\"cancelStatus\":\"0\"},\"msg\":\"\"}"
+}

@@ -52,9 +52,7 @@ class Logger:
             actual_level = getattr(logging, config_level, logging.INFO)
         
         # 设置日志格式（从配置读取或使用默认格式）
-        log_format = config.get('log', {}).get(
-            'format'
-        )
+        log_format = config.get('log', {}).get('format')
         date_format = config.get('log', {}).get('date_format', '%Y-%m-%d %H:%M:%S')
         
         # 创建日志记录器

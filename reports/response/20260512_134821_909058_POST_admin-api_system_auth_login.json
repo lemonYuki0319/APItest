@@ -1,0 +1,21 @@
+{
+  "url": "https://www.whhnhy.com:38868/admin-api/system/auth/login",
+  "method": "POST",
+  "status_code": 200,
+  "headers": {
+    "Server": "nginx/1.24.0",
+    "Date": "Tue, 12 May 2026 05:48:22 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+    "trace-id": "",
+    "X-Content-Type-Options": "nosniff",
+    "X-XSS-Protection": "1; mode=block",
+    "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+    "Pragma": "no-cache",
+    "Expires": "0",
+    "Content-Encoding": "gzip"
+  },
+  "text": "{\"code\":200,\"data\":{\"userId\":1,\"accessToken\":\"4512f54104134b00834149f7a58738f5\",\"refreshToken\":\"869a1f96e466461c8df85e12c97c4413\",\"expiresTime\":1781243302021},\"msg\":\"\"}"
+}

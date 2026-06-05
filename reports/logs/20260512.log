@@ -1,0 +1,146 @@
+2026-05-12 10:20:49 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 10:20:50 - INFO -login.py -18 - APP端登录成功
+2026-05-12 10:20:50 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 10:20:50 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 10:20:50 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 10:20:50 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 10:20:50 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 10:20:51 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 10:20:51 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 10:20:52 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 10:25:11 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 10:25:11 - INFO -login.py -18 - APP端登录成功
+2026-05-12 10:25:11 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 10:25:12 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 10:25:12 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 10:25:12 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 10:25:12 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 10:25:13 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 10:25:13 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 10:25:13 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 11:10:48 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 11:10:49 - INFO -login.py -18 - APP端登录成功
+2026-05-12 11:10:49 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 11:10:49 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 11:10:49 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 11:10:49 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 11:10:49 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 11:10:54 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 11:10:54 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 11:10:54 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 11:18:14 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 11:18:15 - INFO -login.py -18 - APP端登录成功
+2026-05-12 11:18:15 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 11:18:15 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 11:18:15 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 11:18:15 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 11:18:15 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 11:18:19 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 11:18:19 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 11:18:19 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 13:40:37 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:40:38 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:40:38 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 13:40:38 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 13:40:38 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 13:40:38 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 13:40:38 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 13:40:42 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 13:40:42 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 13:40:42 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 13:40:42 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/third/report/valuation-records/create attempt=1/4
+2026-05-12 13:40:42 - ERROR -cultural_asset_actions.py -123 - 提交评估失败: 该用户未关联企业组织信息，无操作权限
+2026-05-12 13:42:43 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:42:44 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:42:44 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 13:42:44 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 13:42:44 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 13:42:44 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 13:42:44 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 13:42:46 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 13:42:46 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 13:42:46 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 13:42:46 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:42:46 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:42:46 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/third/report/valuation-records/create attempt=1/4
+2026-05-12 13:42:46 - INFO -cultural_asset_actions.py -121 - 提交评估成功，评估ID: 2054074785893191682
+2026-05-12 13:43:16 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:43:16 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:43:16 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 13:43:17 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 13:43:17 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 13:43:17 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 13:43:17 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 13:43:18 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 13:43:18 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 13:43:18 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 13:43:18 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:43:18 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:43:18 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/third/report/valuation-records/create attempt=1/4
+2026-05-12 13:43:19 - INFO -cultural_asset_actions.py -121 - 提交评估成功，评估ID: 2054074922350678017
+2026-05-12 13:48:21 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:48:21 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:48:21 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 13:48:21 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 13:48:21 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 13:48:21 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 13:48:21 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 13:48:23 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 13:48:23 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 13:48:23 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 13:48:23 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:48:23 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:49:18 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:49:18 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:49:18 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 13:49:18 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 13:49:18 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 13:49:19 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 13:49:19 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 13:49:21 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 13:49:21 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 13:49:21 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 13:49:21 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:49:21 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:53:01 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:53:01 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:53:01 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 13:53:01 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 13:53:01 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 13:53:01 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 13:53:01 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 13:53:07 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 13:53:07 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 13:53:07 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 13:53:07 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:53:08 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:53:08 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/third/report/valuation-records/create attempt=1/4
+2026-05-12 13:53:08 - INFO -cultural_asset_actions.py -121 - 提交评估成功，评估ID: 2054077394171465730
+2026-05-12 13:53:20 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:53:21 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:53:21 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 13:53:21 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 13:53:21 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 13:53:21 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 13:53:21 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 13:53:27 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 13:53:27 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 13:53:28 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 13:53:28 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 13:53:28 - INFO -login.py -18 - APP端登录成功
+2026-05-12 13:53:28 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/third/report/valuation-records/create attempt=1/4
+2026-05-12 13:53:29 - INFO -cultural_asset_actions.py -121 - 提交评估成功，评估ID: 2054077478971904001
+2026-05-12 14:12:03 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 14:12:04 - INFO -login.py -18 - APP端登录成功
+2026-05-12 14:12:04 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+2026-05-12 14:12:04 - INFO -cultural_asset_actions.py -51 - 文化资产登记成功
+2026-05-12 14:12:04 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+2026-05-12 14:12:04 - INFO -login.py -27 - WEB端登录成功
+2026-05-12 14:12:04 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+2026-05-12 14:12:08 - INFO -cultural_asset_actions.py -23 - 资产登记审核成功
+2026-05-12 14:12:08 - INFO -base_api.py -154 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+2026-05-12 14:12:08 - INFO -cultural_asset_actions.py -37 - 资产公示审核成功
+2026-05-12 14:12:08 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+2026-05-12 14:12:09 - INFO -login.py -18 - APP端登录成功
+2026-05-12 14:12:09 - INFO -base_api.py -154 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/third/report/valuation-records/create attempt=1/4
+2026-05-12 14:12:09 - INFO -cultural_asset_actions.py -121 - 提交评估成功，评估ID: 2054082179461287938

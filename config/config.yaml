@@ -1,4 +1,4 @@
-#生产环境配置
+# 生产环境配置
 # env:
 #   base_url: "https://www.whhnhy.com:8966"  # API 基础地址
 #   timeout: 30                              # 请求超时时间

@@ -100,7 +100,6 @@ class CulturalAssetActions:
     def get_conversation(self, asset_data):
         """获取对话"""
         if not self.api.token:
-            # 如果未登录，先登录
             from src.actions.user_actions import UserActions
             UserActions().login_APP("18800000091", "a123456")
             self.api.token = UserActions().api.token
@@ -110,3 +109,16 @@ class CulturalAssetActions:
         else:
             logger.error(f"获取对话失败: {response.get('msg')}")
         return response, conversation_id
+
+    def submit_valuation(self, valuation_data):
+        """提交评估（APP端专属接口，WEB端无此功能）"""
+        if not self.api.token:
+            from src.actions.user_actions import UserActions
+            UserActions().login_APP("18800000091", "a123456")
+            self.api.token = UserActions().api.token
+        response, valuation_id = self.api.submit_valuation(valuation_data)
+        if response.get("code") == 200:
+            logger.info(f"提交评估成功，评估ID: {valuation_id}")
+        else:
+            logger.error(f"提交评估失败: {response.get('msg')}")
+        return response, valuation_id

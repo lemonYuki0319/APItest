@@ -8,7 +8,12 @@
 import pytest
 import json
 import allure
-from src.utils.allure_helper import AllureHelper, step, attach_request, attach_response
+from src.utils.allure_helper import AllureHelper, attach_response
+from src.utils.logger import Logger
+
+
+
+logger = Logger(__name__).get_logger()
 
 
 @allure.feature("登录模块")

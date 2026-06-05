@@ -9,7 +9,7 @@ logger = Logger(__name__).get_logger()
 
 def test_register_asset_szsb(cultural_asset_actions, login_actions):
     """登记数字商标文化资产"""
-    login_response = login_actions.login_APP("18310665081", "a123456")
+    login_response = login_actions.login_APP("18671450802", "a123456")
     assert login_response.get("code") == 200, "登录失败"
     # 将token传递给文化资产动作
     cultural_asset_actions.api.token = login_actions.api.token
@@ -17,7 +17,7 @@ def test_register_asset_szsb(cultural_asset_actions, login_actions):
     # 准备资产数据
     asset_data = {
         "isRegistered": 1,
-        "cultureAssetName": "数字商标",
+        "cultureAssetName": "数字商标456",
         "cultureAssetType": "2997845276013893005",
         "registerSubjectType": "1",
         "ownershipType": "1",
@@ -71,27 +71,60 @@ def test_register_asset_szsb(cultural_asset_actions, login_actions):
     assert response.get("code") == 200, f"登记资产失败: {response.get('msg')}"
     print(f"资产登记成功，资产ID: {asset_id}")
 
+    # 保存原始资产数据（用于后续提交评估）
+    original_asset_name = asset_data["cultureAssetName"]
+    original_asset_type = asset_data["cultureAssetType"]
+
     #WEB端登录
     login_response = login_actions.login_WEB("芋道源码", "admin", "Szxc@2024")
     assert login_response.get("code") == 200, "登录失败"
     # 将token传递给文化资产动作
     cultural_asset_actions.api.token = login_actions.api.token
     # 资产登记审核
-    asset_data=({
-    "id": f"{asset_id}",
-    "auditStatus": "2",
-    "auditReason": "1"
-    })
+    review_data = {
+        "id": f"{asset_id}",
+        "auditStatus": "2",
+        "auditReason": "1"
+    }
 
-    response = cultural_asset_actions.asset_Registration_Review(asset_data)
+    response = cultural_asset_actions.asset_Registration_Review(review_data)
     assert response.get("code") == 200, f"资产登记审核失败: {response.get('msg')}"
 
     # 资产公示审核
-    asset_data=({
-    "id": f"{asset_id}",
-    "noticeStatus": "2"
-    })
+    disclosure_data = {
+        "id": f"{asset_id}",
+        "noticeStatus": "2"
+    }
 
-    response = cultural_asset_actions.asset_Disclosure_Review(asset_data)
+    response = cultural_asset_actions.asset_Disclosure_Review(disclosure_data)
     assert response.get("code") == 200, f"资产公示审核失败: {response.get('msg')}"
     print(f"资产公示审核成功，资产ID: {asset_id}")
+
+    # 将APP端token传递给文化资产动作端token
+    login_response = login_actions.login_APP("18671450802", "a123456")
+    assert login_response.get("code") == 200, "APP登录失败"
+    
+    cultural_asset_actions.api.token = login_actions.api.token
+    # 提交评估
+    valuation_data = {
+        "id": "",
+        "digitalCultureAssetId": f"{asset_id}",
+        "assetsTypeId": original_asset_type,
+        "cultureAssetName": original_asset_name,
+        "investmentCost": 427,
+        "historicalIncome": 2738,
+        "valuationPurpose": "资产确权与登记",
+        "uploadedDocumentsList": [
+            {
+                "name": "04年费缴纳证明.docx",
+                "url": "https://www.whhnhy.com:29000/szxc/f3ccb29e32a7002f62bc8e9d485401279046a3e9472eb8f8aac7561d68ef2c47.docx"
+            },
+            {
+                "name": "03财务报表.xlsx",
+                "url": "https://www.whhnhy.com:29000/szxc/494162cecf021b2d52b28059db903312f4f0552acc930fc3d4eda0e64c405abc.xlsx"
+            }
+        ]
+    }
+    response, valuation_id = cultural_asset_actions.submit_valuation(valuation_data)
+    assert response.get("code") == 200, f"提交评估失败: {response.get('msg')}"
+    print(f"提交评估成功，评估ID: {valuation_id}")

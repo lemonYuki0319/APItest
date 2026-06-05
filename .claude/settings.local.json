@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(dir:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(.venv/Scripts/python -c \"import lightgbm; print\\('lightgbm OK'\\)\")",
+      "Bash(.venv/Scripts/python -c \"from model import LGBModel; print\\('LGBModel imported OK'\\)\")",
+      "Bash(.venv/Scripts/python test.py --mode=daily)",
+      "Bash(.venv/Scripts/python -c ':*)",
+      "Bash(.venv/Scripts/pip install:*)",
+      "Bash(.venv/Scripts/pip list:*)",
+      "Bash(.venv/Scripts/python llm_analyzer.py --mode=index)",
+      "Bash(.venv/Scripts/python llm_analyzer.py --mode=daily)",
+      "Bash(sed:*)"
     ]
   }
 }

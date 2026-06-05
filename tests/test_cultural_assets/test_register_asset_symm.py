@@ -2,9 +2,13 @@
 登记文化资产
 """
 
+from src.utils.logger import Logger
+
+logger = Logger(__name__).get_logger()
+
 def test_register_asset_symm(cultural_asset_actions, login_actions):
     """登记商业秘密文化资产"""
-    login_response = login_actions.login_APP("18310665081", "a123456")
+    login_response = login_actions.login_APP("18671450802", "a123456")
     assert login_response.get("code") == 200, "登录失败"
     # 将token传递给文化资产动作
     cultural_asset_actions.api.token = login_actions.api.token

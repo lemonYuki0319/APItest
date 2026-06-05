@@ -1,0 +1,20 @@
+[32mINFO    [0m my_project_name:base_api.py:154 [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): www.whhnhy.com:38868
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
+[32mINFO    [0m my_project_name:login.py:18 APP端登录成功
+[32mINFO    [0m my_project_name:base_api.py:154 [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create attempt=1/4
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): www.whhnhy.com:38868
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+[32mINFO    [0m my_project_name:cultural_asset_actions.py:51 文化资产登记成功
+[32mINFO    [0m my_project_name:base_api.py:154 [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login attempt=1/4
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://www.whhnhy.com:38868 "POST /admin-api/system/auth/login HTTP/1.1" 200 None
+[32mINFO    [0m my_project_name:login.py:27 WEB端登录成功
+[32mINFO    [0m my_project_name:base_api.py:154 [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit attempt=1/4
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://www.whhnhy.com:38868 "PUT /admin-api/digital/culture/asset/audit HTTP/1.1" 200 None
+[32mINFO    [0m my_project_name:cultural_asset_actions.py:23 资产登记审核成功
+[32mINFO    [0m my_project_name:base_api.py:154 [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/update-notice-status attempt=1/4
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://www.whhnhy.com:38868 "PUT /admin-api/digital/culture/asset/update-notice-status HTTP/1.1" 200 None
+[32mINFO    [0m my_project_name:cultural_asset_actions.py:37 资产公示审核成功
+[32mINFO    [0m my_project_name:base_api.py:154 [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login attempt=1/4
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
+[32mINFO    [0m my_project_name:login.py:18 APP端登录成功

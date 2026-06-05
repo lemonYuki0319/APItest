@@ -90,3 +90,14 @@ class CulturalAssetAPI(BaseAPI):
         if response.get("code") == 200:
             conversation_id = response.get("data", {}).get("id")
         return response, conversation_id
+
+    def submit_valuation(self, valuation_data):
+        """提交评估"""
+        endpoint = "/api/converge-app-api/third/report/valuation-records/create"
+        headers = self.get_headers()
+        headers["Content-Type"] = "application/json;charset=UTF-8"
+        response = self.post(endpoint, json=valuation_data, headers=headers)
+        valuation_id = None
+        if response.get("code") == 200:
+            valuation_id = response.get("data")
+        return response, valuation_id

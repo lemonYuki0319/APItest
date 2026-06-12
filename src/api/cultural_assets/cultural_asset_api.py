@@ -17,7 +17,6 @@ class CulturalAssetAPI(BaseAPI):
         """资产登记审核"""
         endpoint = "/admin-api/digital/culture/asset/audit"
         headers = self.get_headers()
-        headers["Accept"] = "application/json, text/plain, */*"
         response = self.put(endpoint, json=asset_data, headers=headers)
         return response
 
@@ -25,7 +24,6 @@ class CulturalAssetAPI(BaseAPI):
         """资产公示审核"""
         endpoint = "/admin-api/digital/culture/asset/update-notice-status"
         headers = self.get_headers()
-        headers["Accept"] = "application/json, text/plain, */*"
         response = self.put(endpoint, json=asset_data, headers=headers)
         return response
 
@@ -33,7 +31,6 @@ class CulturalAssetAPI(BaseAPI):
         """创建文化资产"""
         endpoint = "/api/converge-app-api/digital/culture/asset/create"
         headers = self.get_headers()
-        headers["Content-Type"] = "application/json;charset=UTF-8"
         response = self.post(endpoint, json=asset_data, headers=headers)
         asset_id = None
         if response.get("code") == 200:
@@ -44,14 +41,13 @@ class CulturalAssetAPI(BaseAPI):
         """查询资产管理"""
         endpoint = f"/api/converge-app-api/digital/culture/asset/page"
         headers = self.get_headers()
-        headers["Content-Type"] = "application/json;charset=UTF-8"
+
         params = {
             "pageNo": pageNo,
             "pageSize": pageSize,
             "cultureAssetName": cultureAssetName,
             "cultureAssetType": cultureAssetType
         }
-        headers["Accept"] = "application/json, text/plain, */*"
         response = self.get(endpoint, headers=headers, params=params)
         return response
 
@@ -60,7 +56,6 @@ class CulturalAssetAPI(BaseAPI):
         endpoint = "/api/converge-app-api/ai/assistant/common/stream"
         url = f"{self.base_url}{endpoint}"
         headers = self.get_headers()
-        headers["Content-Type"] = "application/json;charset=UTF-8"
         headers["Accept"] = "text/event-stream, text/event-stream"
         # 直接使用session.post，不使用父类的post方法，因为需要处理SSE流式响应
         response = self.session.post(url, json=asset_data, headers=headers, stream=True)
@@ -71,12 +66,10 @@ class CulturalAssetAPI(BaseAPI):
         """查询登记资产"""
         endpoint = "/admin-api/digital/culture/asset/page"
         headers = self.get_headers()
-        headers["Content-Type"] = "application/json;charset=UTF-8"
         params = {
             "pageNo": pageNo,
             "pageSize": pageSize
         }
-        headers["Accept"] = "application/json, text/plain, */*"
         response = self.get(endpoint, headers=headers, params=params)
         return response
 
@@ -84,7 +77,6 @@ class CulturalAssetAPI(BaseAPI):
         """获取对话"""
         endpoint = "/api/converge-app-api/ai/chat/conversation/create-my"
         headers = self.get_headers()
-        headers["Content-Type"] = "application/json;charset=UTF-8"
         response = self.post(endpoint, json=asset_data, headers=headers)
         conversation_id = None
         if response.get("code") == 200:
@@ -95,7 +87,6 @@ class CulturalAssetAPI(BaseAPI):
         """提交评估"""
         endpoint = "/api/converge-app-api/third/report/valuation-records/create"
         headers = self.get_headers()
-        headers["Content-Type"] = "application/json;charset=UTF-8"
         response = self.post(endpoint, json=valuation_data, headers=headers)
         valuation_id = None
         if response.get("code") == 200:

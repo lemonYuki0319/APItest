@@ -8,15 +8,15 @@ logger = Logger(__name__).get_logger()
 
 def test_register_asset_symm(cultural_asset_actions, login_actions):
     """登记商业秘密文化资产"""
-    login_response = login_actions.login_APP("18671450802", "a123456")
+    login_response = login_actions.login_APP("18672868615", "a123456")
     assert login_response.get("code") == 200, "登录失败"
-    # 将token传递给文化资产动作
+    # 将token传递给文化资产动作对象
     cultural_asset_actions.api.token = login_actions.api.token
     
     # 准备资产数据
     asset_data = {
         "isRegistered": 1,
-        "cultureAssetName": "商业秘密333",
+        "cultureAssetName": "商业秘密777",
         "cultureAssetType": "2997845276013894001",
         "registerSubjectType": "1",
         "ownershipType": "1",

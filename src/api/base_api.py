@@ -67,7 +67,8 @@ class BaseAPI:
 
     def get_headers(self) -> Dict[str, str]:
         """获取默认请求头（自动携带 token）"""
-        headers: Dict[str, str] = {"Accept": "application/json, text/plain, */*"}
+        headers: Dict[str, str] = {"Accept": "application/json, text/plain, */*", 
+                                "Content-Type": "application/json;charset=UTF-8"}
         if self.token:
             headers["Authorization"] = f"Bearer {self.token}"
         return headers

@@ -29,12 +29,29 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 @pytest.fixture(scope="function")
 def login_actions():
     """
-    创建登录动作实例
-    
-    提供APP端和WEB端登录功能
+    创建登录动作实例（function 级，每条用例独立）
+
+    用于需要测试登录接口本身的用例（如 test_login）。
     """
     from src.actions.login import LoginActions
     return LoginActions()
+
+
+@pytest.fixture(scope="session")
+def app_token():
+    """
+    会话级登录：整个测试会话只登录一次，返回 token，避免反复登录。
+
+    用于需要登录态但不测登录本身的用例（如创建资产）。
+    测试用例拿到 token 后自行赋值给业务 API 客户端再调用接口。
+    """
+    from src.actions.login import LoginActions
+    actions = LoginActions()
+    response = actions.login_APP("18671450802", "Aa123456")
+    assert response.get("code") == 200, f"会话登录失败: {response.get('msg')}"
+    token = actions.api.token
+    assert token, "会话登录未获取到 accessToken"
+    return token
 
 
 # =============================================================================

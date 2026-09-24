@@ -89,8 +89,8 @@ def test_register_asset_qywh(cultural_asset_actions, login_actions, db):
     assert exists, f"数据库中未找到资产记录, asset_id={asset_id}"
     print(f"数据库断言成功，资产已落库, asset_id={asset_id}")
 
-    # # 6. 清理：删除该资产记录，保持数据健康
-    # deleted = db.delete_by_id(asset_id)
-    # db.commit()  # 提交删除事务，使清理生效
-    # assert deleted == 1, f"清理数据失败, asset_id={asset_id}"
-    # print(f"数据清理成功, asset_id={asset_id}")
+    # 6. 清理：删除该资产记录，保持数据健康
+    deleted = db.delete_by_id(asset_id)
+    db.commit()  # 提交删除事务，使清理生效
+    assert deleted == 1, f"清理数据失败, asset_id={asset_id}"
+    print(f"数据清理成功, asset_id={asset_id}")

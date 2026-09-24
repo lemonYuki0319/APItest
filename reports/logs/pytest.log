@@ -1,15 +1,53 @@
-2026-09-24 15:49:07 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
-2026-09-24 15:49:07 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
-2026-09-24 15:49:07 [DEBUG] https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
-2026-09-24 15:49:07 [INFO] APP端登录成功
-2026-09-24 15:49:07 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
-2026-09-24 15:49:07 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
-2026-09-24 15:49:08 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
-2026-09-24 15:49:08 [INFO] 文化资产登记成功
-2026-09-24 15:49:08 [INFO] [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login
-2026-09-24 15:49:08 [DEBUG] https://www.whhnhy.com:38868 "POST /admin-api/system/auth/login HTTP/1.1" 200 None
-2026-09-24 15:49:08 [INFO] WEB端登录成功
-2026-09-24 15:49:08 [INFO] [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit
-2026-09-24 15:49:09 [DEBUG] https://www.whhnhy.com:38868 "PUT /admin-api/digital/culture/asset/audit HTTP/1.1" 200 None
-2026-09-24 15:49:09 [INFO] 资产登记审核成功
-2026-09-24 15:49:09 [INFO] [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:54 [INFO] [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:49:54 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-09-24 17:49:54 [DEBUG] https://www.whhnhy.com:38868 "POST /converge-app-api/converge/auth/login HTTP/1.1" 200 None
+2026-09-24 17:49:54 [INFO] APP端登录成功
+2026-09-24 17:49:54 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:54 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-09-24 17:49:54 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+2026-09-24 17:49:54 [INFO] 文化资产登记成功
+2026-09-24 17:49:55 [INFO] [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:55 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:55 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-09-24 17:49:55 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+2026-09-24 17:49:55 [INFO] 文化资产登记成功
+2026-09-24 17:49:55 [INFO] [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:55 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:55 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-09-24 17:49:55 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+2026-09-24 17:49:55 [INFO] 文化资产登记成功
+2026-09-24 17:49:56 [INFO] [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:56 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:56 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-09-24 17:49:56 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+2026-09-24 17:49:56 [INFO] 文化资产登记成功
+2026-09-24 17:49:56 [INFO] [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:57 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:57 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-09-24 17:49:57 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+2026-09-24 17:49:57 [ERROR] 文化资产登记失败: 文化资产分类数据不存在
+2026-09-24 17:49:57 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:57 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-09-24 17:49:57 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+2026-09-24 17:49:57 [INFO] 文化资产登记成功
+2026-09-24 17:49:57 [INFO] [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:57 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:57 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-09-24 17:49:57 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+2026-09-24 17:49:57 [INFO] 文化资产登记成功
+2026-09-24 17:49:57 [INFO] [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:57 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:57 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-09-24 17:49:58 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+2026-09-24 17:49:58 [INFO] 文化资产登记成功
+2026-09-24 17:49:58 [INFO] [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:58 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:58 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-09-24 17:49:58 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+2026-09-24 17:49:58 [INFO] 文化资产登记成功
+2026-09-24 17:49:58 [INFO] [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:58 [INFO] [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:58 [DEBUG] Starting new HTTPS connection (1): www.whhnhy.com:38868
+2026-09-24 17:49:59 [DEBUG] https://www.whhnhy.com:38868 "POST /api/converge-app-api/digital/culture/asset/create HTTP/1.1" 200 None
+2026-09-24 17:49:59 [INFO] 文化资产登记成功
+2026-09-24 17:49:59 [INFO] [DB] 已连接 DAM_CLOUD@192.168.0.22:5555

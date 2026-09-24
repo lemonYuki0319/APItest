@@ -106,21 +106,24 @@ class DBHelper:
     # 注意：达梦带参数预编译时双引号标识符会报错，故表名/列名不加引号
     #       （达梦默认按大写匹配，配置中的表名/字段名需为大写）
 
-    def exists_by_id(self, id_value, table=None, id_field="ID"):
+    def exists_by_id(self, id_value, table=None, id_field="ID", schema=None):
         """判断记录是否存在，默认查文化资产表"""
         table = table or self.culture_asset_table
-        sql = f'SELECT COUNT(*) AS CNT FROM {self.schema}.{table} WHERE {id_field} = ?'
+        schema = schema or self.schema
+        sql = f'SELECT COUNT(*) AS CNT FROM {schema}.{table} WHERE {id_field} = ?'
         result = self.query_one(sql, [id_value])
         return (result or {}).get("CNT", 0) > 0
 
-    def get_by_id(self, id_value, table=None, id_field="ID"):
+    def get_by_id(self, id_value, table=None, id_field="ID", schema=None):
         """按 ID 查询单条记录，默认查文化资产表"""
         table = table or self.culture_asset_table
-        sql = f'SELECT * FROM {self.schema}.{table} WHERE {id_field} = ?'
+        schema = schema or self.schema
+        sql = f'SELECT * FROM {schema}.{table} WHERE {id_field} = ?'
         return self.query_one(sql, [id_value])
 
-    def delete_by_id(self, id_value, table=None, id_field="ID"):
+    def delete_by_id(self, id_value, table=None, id_field="ID", schema=None):
         """按 ID 删除记录，返回受影响行数，默认删文化资产表"""
         table = table or self.culture_asset_table
-        sql = f'DELETE FROM {self.schema}.{table} WHERE {id_field} = ?'
+        schema = schema or self.schema
+        sql = f'DELETE FROM {schema}.{table} WHERE {id_field} = ?'
         return self.execute(sql, [id_value])

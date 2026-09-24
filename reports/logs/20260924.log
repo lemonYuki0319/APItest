@@ -302,3 +302,117 @@
 2026-09-24 15:49:08 - INFO -base_api.py -118 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit
 2026-09-24 15:49:09 - INFO -cultural_asset_actions.py -21 - 资产登记审核成功
 2026-09-24 15:49:09 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:23:54 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:23:55 - INFO -login.py -18 - APP端登录成功
+2026-09-24 17:23:55 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:23:55 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:23:55 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/admin-api/system/auth/login
+2026-09-24 17:23:55 - INFO -login.py -27 - WEB端登录成功
+2026-09-24 17:23:55 - INFO -base_api.py -118 - [HTTP] PUT https://www.whhnhy.com:38868/admin-api/digital/culture/asset/audit
+2026-09-24 17:23:57 - INFO -cultural_asset_actions.py -21 - 资产登记审核成功
+2026-09-24 17:23:57 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:03 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:35:04 - INFO -login.py -18 - APP端登录成功
+2026-09-24 17:35:04 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:04 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:04 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:04 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:05 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:05 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:05 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:05 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:05 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:05 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:05 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:05 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:06 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:06 - ERROR -cultural_asset_actions.py -41 - 文化资产登记失败: 文化资产分类数据不存在
+2026-09-24 17:35:06 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:06 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:06 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:06 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:06 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:06 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:07 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:26 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:35:26 - INFO -login.py -18 - APP端登录成功
+2026-09-24 17:35:26 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:26 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:26 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:27 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:27 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:27 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:27 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:27 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:27 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:27 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:28 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:28 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:28 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:28 - ERROR -cultural_asset_actions.py -41 - 文化资产登记失败: 文化资产分类数据不存在
+2026-09-24 17:35:28 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:28 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:28 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:28 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:29 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:29 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:29 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:29 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:29 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:29 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:29 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:30 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:35:30 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:35:30 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:35:30 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:44:58 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:44:59 - INFO -login.py -18 - APP端登录成功
+2026-09-24 17:44:59 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:44:59 - INFO -login.py -18 - APP端登录成功
+2026-09-24 17:44:59 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:44:59 - INFO -login.py -18 - APP端登录成功
+2026-09-24 17:44:59 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:44:59 - ERROR -login.py -20 - APP端登录失败: 手机号不能为空
+2026-09-24 17:44:59 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:45:00 - ERROR -login.py -20 - APP端登录失败: 密码不能为空
+2026-09-24 17:45:00 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:45:00 - ERROR -login.py -20 - APP端登录失败: 您的账号信息有误，请重新输入
+2026-09-24 17:45:00 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:45:00 - ERROR -login.py -20 - APP端登录失败: 您的账号信息有误，请重新输入
+2026-09-24 17:45:00 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:45:00 - ERROR -login.py -20 - APP端登录失败: 用户不存在
+2026-09-24 17:45:00 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:45:00 - ERROR -login.py -20 - APP端登录失败: 手机号格式不正确
+2026-09-24 17:45:00 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:45:00 - ERROR -login.py -20 - APP端登录失败: 手机号格式不正确
+2026-09-24 17:49:54 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-24 17:49:54 - INFO -login.py -18 - APP端登录成功
+2026-09-24 17:49:54 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:54 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:49:55 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:55 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:55 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:49:55 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:55 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:55 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:49:56 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:56 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:56 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:49:56 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:57 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:57 - ERROR -cultural_asset_actions.py -41 - 文化资产登记失败: 文化资产分类数据不存在
+2026-09-24 17:49:57 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:57 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:49:57 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:57 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:57 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:49:57 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:57 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:58 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:49:58 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:58 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:58 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:49:58 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555
+2026-09-24 17:49:58 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/api/converge-app-api/digital/culture/asset/create
+2026-09-24 17:49:59 - INFO -cultural_asset_actions.py -39 - 文化资产登记成功
+2026-09-24 17:49:59 - INFO -db.py -49 - [DB] 已连接 DAM_CLOUD@192.168.0.22:5555

@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-登录接口与文化资产创建接口自动化测试
+文化资产创建接口自动化测试（单接口）
 
 数据驱动方式：pytest.param + yaml 数据文件
-- 登录用例: resources/testdata/login_cases.yaml
 - 资产创建用例: resources/testdata/create_asset_cases.yaml
 
 项目约定：
-- 所有业务方法调用前必须显式登录并赋值 token
-- 登录凭证由测试用例显式控制，不在 action 层自动登录
+- 登录由会话级 app_token 夹具统一完成（整个会话只登录一次），避免反复登录
+- 测试用例显式将 token 赋值给业务 API 客户端后再调用创建接口
 - 正向用例创建成功后，校验数据是否落库；已落库则清理，保持数据健康
 """
 
@@ -25,55 +24,6 @@ def load_yaml(filename):
     with open(path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
-
-# =============================================================================
-# 登录用例
-# =============================================================================
-
-login_data = load_yaml("login_cases.yaml")
-
-LOGIN_CASES = [
-    pytest.param(
-        {
-            "case_id": c.get("case_id", "login_case"),
-            "title": c.get("title", "登录用例"),
-            "mobile": c.get("mobile", ""),
-            "password": c.get("password", ""),
-            "code": c.get("code", ""),
-            "expected_code": c.get("expected_code", 200),
-            "expected_has_token": c.get("expected_has_token", False),
-        },
-        id=c.get("case_id", "login_case"),
-    )
-    for c in login_data.get("cases", [])
-]
-
-
-class TestLoginDataDriven:
-    """登录接口参数化测试"""
-
-    @pytest.mark.parametrize("case", LOGIN_CASES)
-    def test_login(self, login_actions, case):
-        """登录接口数据驱动测试"""
-        response = login_actions.login_APP(case["mobile"], case["password"], case["code"])
-
-        actual_code = response.get("code")
-        data = response.get("data") or {}
-        actual_token = data.get("accessToken")
-
-        assert actual_code == case["expected_code"], (
-            f"[{case['case_id']}] 期望 code={case['expected_code']}, 实际 code={actual_code}, msg={response.get('msg')}"
-        )
-
-        if case["expected_has_token"]:
-            assert actual_token, f"[{case['case_id']}] 正向用例应返回 accessToken"
-        else:
-            assert not actual_token, f"[{case['case_id']}] 反向用例不应返回 accessToken"
-
-
-# =============================================================================
-# 文化资产创建用例
-# =============================================================================
 
 asset_data = load_yaml("create_asset_cases.yaml")
 BASE_ASSET = asset_data.get("base_asset_data", {})
@@ -108,12 +58,10 @@ class TestAssetCreateDataDriven:
     """文化资产创建接口参数化测试"""
 
     @pytest.mark.parametrize("case", ASSET_CASES)
-    def test_create_asset(self, cultural_asset_actions, login_actions, db, case):
+    def test_create_asset(self, cultural_asset_actions, app_token, db, case):
         """文化资产创建接口数据驱动测试"""
-        # 显式登录并赋值 token
-        login_response = login_actions.login_APP("18671450802", "Aa123456")
-        assert login_response.get("code") == 200, "登录失败，无法继续创建资产"
-        cultural_asset_actions.api.token = login_actions.api.token
+        # 使用会话级登录 token，避免反复登录
+        cultural_asset_actions.api.token = app_token
 
         # 创建文化资产
         response, asset_id = cultural_asset_actions.create_asset(case["asset_data"])

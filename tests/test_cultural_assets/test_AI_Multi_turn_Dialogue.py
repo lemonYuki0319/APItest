@@ -20,7 +20,7 @@ def login_actions():
 def test_Multi_turn_Dialogue(cultural_asset_actions, login_actions):
     """测试多轮对话"""
     #APP登录
-    login_response = login_actions.login_APP("18671450802", "a123456")
+    login_response = login_actions.login_APP("18671450802", "Aa123456")
     assert login_response.get("code") == 200, f"APP登录失败: {login_response.get('msg')}"
     # 将token传递给文化资产动作
     cultural_asset_actions.api.token = login_actions.api.token

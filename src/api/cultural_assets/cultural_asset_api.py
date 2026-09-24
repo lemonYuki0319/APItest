@@ -4,7 +4,6 @@
 """
 
 from src.api.base_api import BaseAPI
-import json
 
 class CulturalAssetAPI(BaseAPI):
     def __init__(self, token=None):

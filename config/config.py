@@ -33,3 +33,8 @@ def get_api_config():
 def get_test_config():
     """获取测试配置"""
     return get_config()['test']
+
+
+def get_database_config():
+    """获取数据库配置"""
+    return get_config().get('database', {})

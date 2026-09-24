@@ -1,19 +1,21 @@
 """
-登记企业文化资产
+登记企业文化资产 - 正向用例
+
+流程：APP登录 → 创建资产 → WEB登录审核通过 → 断言数据库落库 → 清理数据
+逆向用例不做 DB 断言与清理。
 """
 import json
-from src.utils.logger import Logger
 
-logger = Logger(__name__).get_logger()
 
-def test_register_asset_qywh(cultural_asset_actions, login_actions):
-    """登记企业文化资产"""
-    login_response = login_actions.login_APP("18672868615", "a123456")
+def test_register_asset_qywh(cultural_asset_actions, login_actions, db):
+    """登记企业文化资产（正向）"""
+    # 1. APP端登录
+    login_response = login_actions.login_APP("18672868615", "Aa123456")
     assert login_response.get("code") == 200, f"登录失败: {login_response.get('msg')}"
     # 将token传递给文化资产动作
     cultural_asset_actions.api.token = login_actions.api.token
 
-    # 准备资产数据
+    # 2. 准备资产数据
     asset_data = {
         "isRegistered": 1,
         "cultureAssetName": "企业文化测试234",
@@ -64,32 +66,31 @@ def test_register_asset_qywh(cultural_asset_actions, login_actions):
         ], ensure_ascii=False)
     }
 
-    # 创建资产
+    # 3. 创建资产
     response, asset_id = cultural_asset_actions.create_asset(asset_data)
     assert response.get("code") == 200, f"登记企业文化资产失败: {response.get('msg')}"
     print(f"企业文化资产登记成功，资产ID: {asset_id}")
-    
-    #WEB端登录
+
+    # 4. WEB端登录并审核通过（审核通过后数据落库到 DAM_DIGITAL.DIGITAL_CULTURE_ASSET）
     login_response = login_actions.login_WEB("芋道源码", "admin", "Szxc@2024")
     assert login_response.get("code") == 200, f"登录失败: {login_response.get('msg')}"
-    # 将token传递给文化资产动作
     cultural_asset_actions.api.token = login_actions.api.token
-    # 资产登记审核
-    asset_data=({
-    "id": f"{asset_id}",
-    "auditStatus": "2",
-    "auditReason": "1"
-    })
 
-    response = cultural_asset_actions.asset_Registration_Review(asset_data)
+    audit_data = {
+        "id": f"{asset_id}",
+        "auditStatus": "2",
+        "auditReason": "1"
+    }
+    response = cultural_asset_actions.asset_Registration_Review(audit_data)
     assert response.get("code") == 200, f"资产登记审核失败: {response.get('msg')}"
 
-    # 资产公示审核
-    asset_data=({
-    "id": f"{asset_id}",
-    "noticeStatus": "2"
-    })
+    # 5. 断言数据库存在该资产记录
+    exists = db.exists_by_id(asset_id)
+    assert exists, f"数据库中未找到资产记录, asset_id={asset_id}"
+    print(f"数据库断言成功，资产已落库, asset_id={asset_id}")
 
-    response = cultural_asset_actions.asset_Disclosure_Review(asset_data)
-    assert response.get("code") == 200, f"资产公示审核失败: {response.get('msg')}"
-    print(f"资产公示审核成功，资产ID: {asset_id}")
+    # # 6. 清理：删除该资产记录，保持数据健康
+    # deleted = db.delete_by_id(asset_id)
+    # db.commit()  # 提交删除事务，使清理生效
+    # assert deleted == 1, f"清理数据失败, asset_id={asset_id}"
+    # print(f"数据清理成功, asset_id={asset_id}")

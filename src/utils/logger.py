@@ -64,12 +64,12 @@ class Logger:
             # 创建格式化器
             formatter = logging.Formatter(log_format, date_format)
             
-            # 1. 控制台处理器
-            console_handler = logging.StreamHandler()
-            console_handler.setLevel(actual_level)
-            console_handler.setFormatter(formatter)
-            #给日志添加控制台处理器
-            self.logger.addHandler(console_handler)
+            # # 1. 控制台处理器
+            # console_handler = logging.StreamHandler()
+            # console_handler.setLevel(actual_level)
+            # console_handler.setFormatter(formatter)
+            # #给日志添加控制台处理器
+            # self.logger.addHandler(console_handler)
 
             # 2. 文件处理器（按日期命名）
             log_file = os.path.join(
@@ -123,27 +123,3 @@ class Logger:
 
 # 创建全局日志实例（默认使用）
 logger: logging.Logger = Logger().get_logger()
-
-
-# ============================================
-# 使用示例
-# ============================================
-if __name__ == '__main__':
-    # 方式1: 使用全局 logger 实例（推荐）
-    from src.utils.logger import logger
-    
-    logger.debug("这是一条调试日志")
-    logger.info("这是一条信息日志")
-    logger.warning("这是一条警告日志")
-    logger.error("这是一条错误日志")
-    logger.critical("这是一条严重错误日志")
-    
-    # 方式2: 创建自定义 logger（适用于特定模块）
-    from src.utils.logger import Logger
-    
-    custom_logger = Logger('my_module').get_logger()
-    custom_logger.info("自定义模块的日志")
-    
-    # 方式3: 自定义日志级别
-    debug_logger = Logger('debug_module', log_level=logging.DEBUG).get_logger()
-    debug_logger.debug("调试模式的详细日志")

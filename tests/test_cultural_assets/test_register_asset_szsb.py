@@ -9,7 +9,7 @@ logger = Logger(__name__).get_logger()
 
 def test_register_asset_szsb(cultural_asset_actions, login_actions):
     """登记数字商标文化资产"""
-    login_response = login_actions.login_APP("18671450802", "a123456")
+    login_response = login_actions.login_APP("18671450802", "Aa123456")
     assert login_response.get("code") == 200, "登录失败"
     # 将token传递给文化资产动作
     cultural_asset_actions.api.token = login_actions.api.token
@@ -101,7 +101,7 @@ def test_register_asset_szsb(cultural_asset_actions, login_actions):
     print(f"资产公示审核成功，资产ID: {asset_id}")
 
     # 将APP端token传递给文化资产动作端token
-    login_response = login_actions.login_APP("18671450802", "a123456")
+    login_response = login_actions.login_APP("18671450802", "Aa123456")
     assert login_response.get("code") == 200, "APP登录失败"
     
     cultural_asset_actions.api.token = login_actions.api.token

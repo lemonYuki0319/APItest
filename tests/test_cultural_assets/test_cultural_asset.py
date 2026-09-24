@@ -5,15 +5,9 @@
 使用 Allure 报告封装展示测试步骤和附件
 """
 
-import pytest
 import json
 import allure
 from src.utils.allure_helper import AllureHelper, attach_response
-from src.utils.logger import Logger
-
-
-
-logger = Logger(__name__).get_logger()
 
 
 @allure.feature("登录模块")
@@ -27,7 +21,7 @@ class TestLogin:
     def test_login_success(self, login_actions):
         """测试1: 正确的手机号和密码登录"""
         with allure.step("步骤1: 执行APP端登录"):
-            response = login_actions.login_APP("18671450802", "a123456")
+            response = login_actions.login_APP("18671450802", "Aa123456")
             attach_response(response, "登录响应")
         
         with allure.step("步骤2: 验证响应结果"):
@@ -40,7 +34,7 @@ class TestLogin:
     def test_login_missing_mobile(self, login_actions):
         """测试2: 缺少mobile参数"""
         with allure.step("执行登录（不填手机号）"):
-            response = login_actions.login_APP("", "a123456")
+            response = login_actions.login_APP("", "Aa123456")
             attach_response(response, "响应结果")
         
         with allure.step("验证登录失败"):
@@ -73,7 +67,7 @@ class TestLogin:
     def test_login_unregistered_mobile(self, login_actions):
         """测试5: 不存在的手机号"""
         with allure.step("执行登录（未注册手机号）"):
-            response = login_actions.login_APP("13800138000", "a123456")
+            response = login_actions.login_APP("13800138000", "Aa123456")
             attach_response(response, "响应结果")
         
         with allure.step("验证登录失败"):
@@ -92,7 +86,7 @@ class TestAssetCreate:
         """测试6: 成功创建资产 - 数字商标"""
         
         with allure.step("步骤1: 用户登录"):
-            login_response = login_actions.login_APP("18671450802", "a123456")
+            login_response = login_actions.login_APP("18671450802", "Aa123456")
             attach_response(login_response, "登录响应")
             assert login_response.get("code") == 200, "登录失败"
             cultural_asset_actions.api.token = login_actions.api.token
@@ -154,7 +148,7 @@ class TestAssetCreate:
         """测试7: 缺少必填字段"""
         
         with allure.step("步骤1: 用户登录"):
-            login_response = login_actions.login_APP("18671450802", "a123456")
+            login_response = login_actions.login_APP("18671450802", "Aa123456")
             assert login_response.get("code") == 200, "登录失败"
             cultural_asset_actions.api.token = login_actions.api.token
         
@@ -182,7 +176,7 @@ class TestAssetQuery:
         """测试8: 查询资产"""
         
         with allure.step("步骤1: 用户登录"):
-            login_response = login_actions.login_APP("18671450802", "a123456")
+            login_response = login_actions.login_APP("18671450802", "Aa123456")
             assert login_response.get("code") == 200, "登录失败"
             cultural_asset_actions.api.token = login_actions.api.token
         

@@ -1,0 +1,114 @@
+# 创建文化资产接口测试用例数据
+# 采用 base_asset_data + override + remove_fields 组合模式：
+#   - base_asset_data: 基础完整数据模板
+#   - override: 当前用例需要覆盖或新增的字段（与 base 合并）
+#   - remove_fields: 当前用例需要删除的字段列表
+# 正向用例：使用完整有效数据创建成功
+# 反向用例：缺少必填字段、字段值非法等
+
+base_asset_data:
+  isRegistered: 1
+  cultureAssetName: "数字商标自动化测试"
+  cultureAssetType: "2997845276013893005"
+  registerSubjectType: "1"
+  ownershipType: "1"
+  coOwnerSaveReqList:
+    - coOwnerName: ""
+      coOwnerPhone: ""
+  assetDesc: "自动化测试资产描述"
+  assetImgUrl:
+    - name: "05数字出版许可证（非必传，仅供参考）.png"
+      url: "https://www.whhnhy.com:29000/szxc/942fbdf590c51fc498d11074733e9fa5552b0f9012dfa7e81efd2084b0717d6f.png"
+  ownershipFileUrl:
+    - name: "04商标注册证（非必传，仅供参考）.png"
+      url: "https://www.whhnhy.com:29000/szxc/942fbdf590c51fc498d11074733e9fa5552b0f9012dfa7e81efd2084b0717d6f.png"
+  assetDetailValidJson: "{\"trademarkName\":\"测试商标\",\"trademarkCategory\":\"35类\",\"registrationNumber\":\"12345678\",\"registrationDate\":\"2024-01-01\",\"validityPeriod\":\"2034-01-01\",\"trademarkOwner\":\"测试公司\"}"
+  assetDetailJson: "[{\"label\":\"商标名称\",\"name\":\"trademarkName\",\"type\":\"text\",\"value\":\"测试商标\"},{\"label\":\"商标类别\",\"name\":\"trademarkCategory\",\"type\":\"text\",\"value\":\"35类\"},{\"label\":\"注册号\",\"name\":\"registrationNumber\",\"type\":\"text\",\"value\":\"12345678\"}]"
+
+cases:
+  # ============ 正向用例 ============
+  - case_id: "asset_001"
+    title: "完整有效数据创建数字商标资产成功"
+    override: {}
+    remove_fields: []
+    expected_code: 200
+    expected_has_asset_id: true
+    severity: "critical"
+
+  - case_id: "asset_002"
+    title: "修改资产名称创建资产成功"
+    override:
+      cultureAssetName: "数字商标自动化测试-改名"
+    remove_fields: []
+    expected_code: 200
+    expected_has_asset_id: true
+    severity: "critical"
+
+  - case_id: "asset_003"
+    title: "未登记资产(isRegistered=0)创建成功"
+    override:
+      isRegistered: 0
+    remove_fields: []
+    expected_code: 200
+    expected_has_asset_id: true
+    severity: "normal"
+
+  # ============ 反向用例 ============
+  - case_id: "asset_004"
+    title: "缺少资产名称cultureAssetName创建失败"
+    override: {}
+    remove_fields: ["cultureAssetName"]
+    expected_code: 200
+    expected_has_asset_id: false
+    severity: "normal"
+
+  - case_id: "asset_005"
+    title: "缺少资产类型cultureAssetType创建失败"
+    override: {}
+    remove_fields: ["cultureAssetType"]
+    expected_code: 200
+    expected_has_asset_id: false
+    severity: "normal"
+
+  - case_id: "asset_006"
+    title: "缺少isRegistered字段创建失败"
+    override: {}
+    remove_fields: ["isRegistered"]
+    expected_code: 200
+    expected_has_asset_id: false
+    severity: "normal"
+
+  - case_id: "asset_007"
+    title: "缺少registerSubjectType创建失败"
+    override: {}
+    remove_fields: ["registerSubjectType"]
+    expected_code: 200
+    expected_has_asset_id: false
+    severity: "normal"
+
+  - case_id: "asset_008"
+    title: "assetImgUrl为空数组创建失败"
+    override:
+      assetImgUrl: []
+    remove_fields: []
+    expected_code: 200
+    expected_has_asset_id: false
+    severity: "normal"
+
+  - case_id: "asset_009"
+    title: "ownershipFileUrl为空数组创建失败"
+    override:
+      ownershipFileUrl: []
+    remove_fields: []
+    expected_code: 200
+    expected_has_asset_id: false
+    severity: "normal"
+
+  - case_id: "asset_010"
+    title: "assetDetailJson为空字符串创建失败"
+    override:
+      assetDetailJson: ""
+    remove_fields: []
+    expected_code: 200
+    expected_has_asset_id: false
+    severity: "minor"

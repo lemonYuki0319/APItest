@@ -12,7 +12,7 @@ env:
 # 测试配置
 test:
   verify_ssl: false                        # 是否验证 SSL
-  new_password: "a123456"                  # 默认新密码
+  new_password: "Aa123456"                  # 默认新密码
 
 # 管理员配置
 admin:
@@ -31,3 +31,12 @@ api:
     login: "/admin-api/system/auth/login"
   user:
     update_password: "/admin-api/converge/user/update-password"
+
+# 达梦数据库配置
+database:
+  host: "192.168.0.22"
+  port: 5555
+  user: "DAM_CLOUD"
+  password: "DAM_CLOUD"
+  schema: "DAM_DIGITAL"                          # 默认 schema
+  culture_asset_table: "DIGITAL_CULTURE_ASSET"   # 文化资产表名

@@ -140,13 +140,13 @@ python scripts/run.py --generate-report
 ```python
 def test_login_success(login_actions):
     """测试登录"""
-    response = login_actions.login_APP("18671450802", "a123456")
+    response = login_actions.login_APP("18671450802", "Aa123456")
     assert response.get("code") == 200
 
 def test_create_asset(cultural_asset_actions, login_actions):
     """测试创建资产"""
     # 先登录
-    login_actions.login_APP("18671450802", "a123456")
+    login_actions.login_APP("18671450802", "Aa123456")
     cultural_asset_actions.api.token = login_actions.api.token
     
     # 执行业务操作
@@ -228,7 +228,7 @@ class TestLogin:
     @allure.severity(allure.severity_level.CRITICAL)
     def test_login_success(self, login_actions):
         with allure.step("步骤1: 执行APP端登录"):
-            response = login_actions.login_APP("18671450802", "a123456")
+            response = login_actions.login_APP("18671450802", "Aa123456")
             attach_response(response, "登录响应")  # 添加响应附件
         
         with allure.step("步骤2: 验证响应结果"):

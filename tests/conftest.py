@@ -45,8 +45,28 @@ def login_actions():
 def cultural_asset_actions():
     """
     创建文化资产业务动作实例
-    
+
     提供文化资产登记、查询、审核等功能
     """
     from src.actions.cultural_assets.cultural_asset_actions import CulturalAssetActions
     return CulturalAssetActions()
+
+
+# =============================================================================
+# 数据库相关 Fixture
+# =============================================================================
+
+@pytest.fixture(scope="function")
+def db():
+    """
+    达梦数据库工具实例（function 级，用例结束自动关闭连接）
+
+    用法：
+        exists = db.exists_by_id(asset_id)   # 查询文化资产表
+        db.delete_by_id(asset_id)           # 删除文化资产表记录
+        db.commit()                          # 提交事务（删除后需 commit 才生效）
+    """
+    from src.utils.db import DBHelper
+    helper = DBHelper()
+    yield helper
+    helper.close()

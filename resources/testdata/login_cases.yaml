@@ -1,0 +1,87 @@
+# 登录接口测试用例数据
+# 正向用例：使用有效账号密码登录成功
+# 反向用例：参数缺失、格式错误、未注册、错误密码等
+
+cases:
+  # ============ 正向用例 ============
+  - case_id: "login_001"
+    title: "正确手机号和密码登录成功"
+    mobile: "18671450802"
+    password: "Aa123456"
+    expected_code: 200
+    expected_has_token: true
+    severity: "critical"
+
+  - case_id: "login_002"
+    title: "携带code参数登录成功"
+    mobile: "18671450802"
+    password: "Aa123456"
+    code: "1234"
+    expected_code: 200
+    expected_has_token: true
+    severity: "critical"
+
+  - case_id: "login_003"
+    title: "另一有效账号登录成功"
+    mobile: "18672868615"
+    password: "Aa123456"
+    expected_code: 200
+    expected_has_token: true
+    severity: "critical"
+
+  # ============ 反向用例 ============
+  - case_id: "login_004"
+    title: "手机号为空登录失败"
+    mobile: ""
+    password: "Aa123456"
+    expected_code: 200
+    expected_has_token: false
+    severity: "normal"
+
+  - case_id: "login_005"
+    title: "密码为空登录失败"
+    mobile: "18671450802"
+    password: ""
+    expected_code: 200
+    expected_has_token: false
+    severity: "normal"
+
+  - case_id: "login_006"
+    title: "手机号和密码均为空登录失败"
+    mobile: ""
+    password: ""
+    expected_code: 200
+    expected_has_token: false
+    severity: "normal"
+
+  - case_id: "login_007"
+    title: "密码错误登录失败"
+    mobile: "18671450802"
+    password: "wrongpass"
+    expected_code: 200
+    expected_has_token: false
+    severity: "normal"
+
+  - case_id: "login_008"
+    title: "未注册手机号登录失败"
+    mobile: "13800138000"
+    password: "Aa123456"
+    expected_code: 200
+    expected_has_token: false
+    severity: "normal"
+
+  - case_id: "login_009"
+    title: "手机号格式错误登录失败"
+    mobile: "1867145080"
+    password: "Aa123456"
+    expected_code: 200
+    expected_has_token: false
+    severity: "normal"
+
+  - case_id: "login_010"
+    title: "手机号含特殊字符登录失败"
+    mobile: "18671#4508"
+    password: "Aa123456"
+    expected_code: 200
+    expected_has_token: false
+    severity: "minor"

@@ -6,6 +6,29 @@
 import os
 import yaml
 from config.constants import TESTDATA_DIR
+import pytest
+
+
+
+def load_yaml(filename):
+    """加载 resources/testdata 下的 yaml 测试数据文件（供各测试模块共享）"""
+    path = os.path.join(TESTDATA_DIR, filename)
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+MARK_MAP = {
+    "slow": pytest.mark.slow,
+    "auth": pytest.mark.auth,
+    "user": pytest.mark.user,
+}
+def build_marks(case):
+    """把 yaml 中的标签字段转换为 pytest 标记"""
+    marks = [MARK_MAP[m] for m in (case.get("marks") or []) if m in MARK_MAP]
+    if case.get("skip"):
+        marks.append(pytest.mark.skip(reason=case.get("skip_reason", "标记跳过")))
+    if case.get("xfail"):
+        marks.append(pytest.mark.xfail(reason=case.get("xfail_reason", "标记预期失败")))
+    return marks
 
 class DataUtils:
     @staticmethod

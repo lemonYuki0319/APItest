@@ -34,15 +34,14 @@ def login_actions():
     用于需要测试登录接口本身的用例（如 test_login）。
     """
     from src.actions.login import LoginActions
-    return LoginActions()
 
+    return LoginActions()
 
 @pytest.fixture(scope="session")
 def app_token():
     """
-    会话级登录：整个测试会话只登录一次，返回 token，避免反复登录。
-
-    用于需要登录态但不测登录本身的用例（如创建资产）。
+    会话级登录：只登录一次，只登录一次，返回 token，避免反复登录。
+    用于需要登录态但不测登录本身的用例。
     测试用例拿到 token 后自行赋值给业务 API 客户端再调用接口。
     """
     from src.actions.login import LoginActions

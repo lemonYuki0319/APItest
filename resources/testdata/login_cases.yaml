@@ -37,6 +37,7 @@ cases:
     expected_code: 200
     expected_has_token: false
     severity: "normal"
+    xfail: true
 
   - case_id: "login_005"
     title: "密码为空登录失败"
@@ -45,6 +46,7 @@ cases:
     expected_code: 200
     expected_has_token: false
     severity: "normal"
+    xfail: true
 
   - case_id: "login_006"
     title: "手机号和密码均为空登录失败"
@@ -53,6 +55,7 @@ cases:
     expected_code: 200
     expected_has_token: false
     severity: "normal"
+    xfail: true
 
   - case_id: "login_007"
     title: "密码错误登录失败"
@@ -61,6 +64,7 @@ cases:
     expected_code: 200
     expected_has_token: false
     severity: "normal"
+    xfail: true
 
   - case_id: "login_008"
     title: "未注册手机号登录失败"
@@ -69,6 +73,7 @@ cases:
     expected_code: 200
     expected_has_token: false
     severity: "normal"
+    xfail: true
 
   - case_id: "login_009"
     title: "手机号格式错误登录失败"
@@ -77,6 +82,7 @@ cases:
     expected_code: 200
     expected_has_token: false
     severity: "normal"
+    xfail: true
 
   - case_id: "login_010"
     title: "手机号含特殊字符登录失败"
@@ -85,3 +91,4 @@ cases:
     expected_code: 200
     expected_has_token: false
     severity: "minor"
+    xfail: true

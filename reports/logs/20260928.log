@@ -1,0 +1,56 @@
+2026-09-28 16:38:08 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:38:08 - INFO -login.py -18 - APP端登录成功
+2026-09-28 16:38:08 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:38:08 - INFO -login.py -18 - APP端登录成功
+2026-09-28 16:38:08 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:38:09 - INFO -login.py -18 - APP端登录成功
+2026-09-28 16:38:09 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:38:09 - ERROR -login.py -20 - APP端登录失败: 手机号不能为空
+2026-09-28 16:38:09 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:38:09 - ERROR -login.py -20 - APP端登录失败: 您的账号信息有误，请重新输入
+2026-09-28 16:38:09 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:38:10 - ERROR -login.py -20 - APP端登录失败: 您的账号信息有误，请重新输入
+2026-09-28 16:38:10 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:38:10 - ERROR -login.py -20 - APP端登录失败: 您的账号信息有误，请重新输入
+2026-09-28 16:38:10 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:38:10 - ERROR -login.py -20 - APP端登录失败: 用户不存在
+2026-09-28 16:38:10 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:38:10 - ERROR -login.py -20 - APP端登录失败: 手机号格式不正确
+2026-09-28 16:38:10 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:38:10 - ERROR -login.py -20 - APP端登录失败: 手机号格式不正确
+2026-09-28 16:41:39 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:41:40 - INFO -login.py -18 - APP端登录成功
+2026-09-28 16:41:40 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:41:40 - ERROR -login.py -20 - APP端登录失败: 手机号不能为空
+2026-09-28 16:41:40 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:41:40 - ERROR -login.py -20 - APP端登录失败: 您的账号信息有误，请重新输入
+2026-09-28 16:41:40 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:41:40 - ERROR -login.py -20 - APP端登录失败: 密码不能为空
+2026-09-28 16:41:40 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:41:41 - ERROR -login.py -20 - APP端登录失败: 您的账号信息有误，请重新输入
+2026-09-28 16:41:41 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:41:41 - ERROR -login.py -20 - APP端登录失败: 用户不存在
+2026-09-28 16:41:41 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:41:41 - ERROR -login.py -20 - APP端登录失败: 手机号格式不正确
+2026-09-28 16:41:41 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:41:41 - ERROR -login.py -20 - APP端登录失败: 手机号格式不正确
+2026-09-28 16:43:29 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:43:29 - INFO -login.py -18 - APP端登录成功
+2026-09-28 16:43:29 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:43:30 - INFO -login.py -18 - APP端登录成功
+2026-09-28 16:43:30 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:43:30 - INFO -login.py -18 - APP端登录成功
+2026-09-28 16:43:30 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:43:30 - ERROR -login.py -20 - APP端登录失败: 手机号不能为空
+2026-09-28 16:43:30 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:43:30 - ERROR -login.py -20 - APP端登录失败: 您的账号信息有误，请重新输入
+2026-09-28 16:43:30 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:43:30 - ERROR -login.py -20 - APP端登录失败: 密码不能为空
+2026-09-28 16:43:30 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:43:31 - ERROR -login.py -20 - APP端登录失败: 您的账号信息有误，请重新输入
+2026-09-28 16:43:31 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:43:31 - ERROR -login.py -20 - APP端登录失败: 用户不存在
+2026-09-28 16:43:31 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:43:31 - ERROR -login.py -20 - APP端登录失败: 手机号格式不正确
+2026-09-28 16:43:31 - INFO -base_api.py -118 - [HTTP] POST https://www.whhnhy.com:38868/converge-app-api/converge/auth/login
+2026-09-28 16:43:31 - ERROR -login.py -20 - APP端登录失败: 手机号格式不正确

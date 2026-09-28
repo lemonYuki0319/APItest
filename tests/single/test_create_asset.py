@@ -11,18 +11,11 @@
 - 正向用例创建成功后，校验数据是否落库；已落库则清理，保持数据健康
 """
 
-import os
 import copy
-import yaml
 import pytest
-from config.constants import TESTDATA_DIR
+from src.utils.data_utils import load_yaml
+from src.utils.data_utils import build_marks
 
-
-def load_yaml(filename):
-    """加载 yaml 测试数据文件"""
-    path = os.path.join(TESTDATA_DIR, filename)
-    with open(path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f)
 
 
 asset_data = load_yaml("create_asset_cases.yaml")
@@ -49,6 +42,7 @@ ASSET_CASES = [
             "expected_has_asset_id": c.get("expected_has_asset_id", False),
         },
         id=c.get("case_id", "asset_case"),
+        marks=build_marks(c),
     )
     for c in asset_data.get("cases", [])
 ]

@@ -8,18 +8,9 @@
 说明：本文件即测试登录接口本身，每条用例独立登录，凭证由用例显式控制。
 """
 
-import os
-import yaml
 import pytest
-from config.constants import TESTDATA_DIR
-
-
-def load_yaml(filename):
-    """加载 yaml 测试数据文件"""
-    path = os.path.join(TESTDATA_DIR, filename)
-    with open(path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f)
-
+from src.utils.data_utils import load_yaml
+from src.utils.data_utils import build_marks
 
 login_data = load_yaml("login_cases.yaml")
 
@@ -35,6 +26,7 @@ LOGIN_CASES = [
             "expected_has_token": c.get("expected_has_token", False),
         },
         id=c.get("case_id", "login_case"),
+        marks=build_marks(c),
     )
     for c in login_data.get("cases", [])
 ]

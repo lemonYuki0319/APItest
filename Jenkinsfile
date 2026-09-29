@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Install Deps') {
+            steps {
+                bat 'python -m pip install -r requirements.txt'
+            }
+        }
         stage('Checkout') {
             steps {
                 // Pipeline script from SCM 会自动 checkout，这里保留也无妨

@@ -58,18 +58,20 @@ class Logger:
         # 创建日志记录器
         self.logger: logging.Logger = logging.getLogger(name)
         self.logger.setLevel(actual_level)
+        # 关闭向 root logger 传播，避免与 pytest 的 log_cli/log_file 处理器重复输出
+        self.logger.propagate = False
         
         # 避免重复添加处理器（单例模式关键）
         if not self.logger.handlers:
             # 创建格式化器
             formatter = logging.Formatter(log_format, date_format)
             
-            # # 1. 控制台处理器
-            # console_handler = logging.StreamHandler()
-            # console_handler.setLevel(actual_level)
-            # console_handler.setFormatter(formatter)
-            # #给日志添加控制台处理器
-            # self.logger.addHandler(console_handler)
+            # 1. 控制台处理器
+            console_handler = logging.StreamHandler()
+            console_handler.setLevel(actual_level)
+            console_handler.setFormatter(formatter)
+            #给日志添加控制台处理器
+            self.logger.addHandler(console_handler)
 
             # 2. 文件处理器（按日期命名）
             log_file = os.path.join(
